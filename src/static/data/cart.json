@@ -1,0 +1,100 @@
+{
+  "cartItems": [
+    {
+      "id": 1,
+      "name": "小米30W磁吸无线充",
+      "price": 149.00,
+      "originalPrice": 199.00,
+      "image": "https://picsum.photos/200/200?random=201",
+      "color": "白色",
+      "quantity": 1,
+      "selected": true,
+      "stock": 99,
+      "tag": "热销"
+    },
+    {
+      "id": 2,
+      "name": "Xiaomi Buds 5",
+      "price": 699.00,
+      "originalPrice": 799.00,
+      "image": "https://picsum.photos/200/200?random=202",
+      "color": "钛光金",
+      "quantity": 1,
+      "selected": true,
+      "stock": 50,
+      "tag": "3期免息"
+    },
+    {
+      "id": 3,
+      "name": "小米6A磁吸编织快充数据线1m USB-A to USB-C",
+      "price": 59.00,
+      "image": "https://picsum.photos/200/200?random=203",
+      "color": "深青色 100cm",
+      "quantity": 2,
+      "selected": false,
+      "stock": 200
+    },
+    {
+      "id": 4,
+      "name": "小米双接口U盘",
+      "price": 169.00,
+      "image": "https://picsum.photos/200/200?random=204",
+      "color": "128G",
+      "quantity": 1,
+      "selected": true,
+      "stock": 30
+    }
+  ],
+  "recommendProducts": [
+    {
+      "id": 101,
+      "name": "小米手环8 Pro",
+      "price": 399,
+      "originalPrice": 499,
+      "image": "https://picsum.photos/200/200?random=301",
+      "tag": "新品",
+      "description": "健康监测 | 运动追踪"
+    },
+    {
+      "id": 102,
+      "name": "Redmi Note 14系列",
+      "price": 1299,
+      "originalPrice": 1499,
+      "image": "https://picsum.photos/200/200?random=302",
+      "tag": "热销",
+      "description": "性能升级 | 拍照旗舰"
+    },
+    {
+      "id": 103,
+      "name": "小米智能门锁E20",
+      "price": 1699,
+      "image": "https://picsum.photos/200/200?random=303",
+      "description": "指纹解锁 | 智能安防"
+    },
+    {
+      "id": 104,
+      "name": "米家扫地机器人Ultra",
+      "price": 2999,
+      "originalPrice": 3499,
+      "image": "https://picsum.photos/200/200?random=304",
+      "tag": "智能",
+      "description": "自动清洁 | 智能避障"
+    },
+    {
+      "id": 105,
+      "name": "小米电视A系列 55英寸",
+      "price": 1999,
+      "image": "https://picsum.photos/200/200?random=305",
+      "description": "4K超清 | 智能语音"
+    },
+    {
+      "id": 106,
+      "name": "小米路由器AX6000",
+      "price": 599,
+      "originalPrice": 699,
+      "image": "https://picsum.photos/200/200?random=306",
+      "tag": "WiFi6",
+      "description": "高速网络 | 稳定连接"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "name": "Xiaomi手机",
+    "products": [
+      {
+        "id": 1,
+        "name": "Xiaomi 15S Pro",
+        "price": 5499,
+        "originalPrice": 5999,
+        "image": "https://picsum.photos/200/200?random=101",
+        "tag": "换新补贴"
+      },
+      {
+        "id": 2,
+        "name": "Xiaomi 15 Ultra",
+        "price": 6499,
+        "image": "https://picsum.photos/200/200?random=102",
+        "tag": "换新补贴"
+      },
+      {
+        "id": 3,
+        "name": "Xiaomi 15 Pro",
+        "price": 4999,
+        "image": "https://picsum.photos/200/200?random=103",
+        "tag": "换新补贴"
+      },
+      {
+        "id": 4,
+        "name": "Xiaomi 15",
+        "price": 3999,
+        "originalPrice": 4299,
+        "image": "https://picsum.photos/200/200?random=104",
+        "tag": "换新补贴"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "REDMI手机",
+    "products": [
+      {
+        "id": 5,
+        "name": "Redmi K80 至尊版",
+        "price": 3999,
+        "image": "https://picsum.photos/200/200?random=105"
+      },
+      {
+        "id": 6,
+        "name": "Redmi Note 14 Pro+",
+        "price": 2299,
+        "image": "https://picsum.photos/200/200?random=106"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "手机配件",
+    "products": [
+      {
+        "id": 7,
+        "name": "小米无线充电器",
+        "price": 199,
+        "image": "https://picsum.photos/200/200?random=107"
+      },
+      {
+        "id": 8,
+        "name": "小米手机壳",
+        "price": 49,
+        "image": "https://picsum.photos/200/200?random=108"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "电脑平板",
+    "products": [
+      {
+        "id": 9,
+        "name": "小米笔记本Pro",
+        "price": 5999,
+        "image": "https://picsum.photos/200/200?random=109"
+      },
+      {
+        "id": 10,
+        "name": "小米平板6",
+        "price": 1999,
+        "image": "https://picsum.photos/200/200?random=110"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "智能穿戴",
+    "products": [
+      {
+        "id": 11,
+        "name": "小米手环8",
+        "price": 299,
+        "image": "https://picsum.photos/200/200?random=111"
+      },
+      {
+        "id": 12,
+        "name": "小米Watch S3",
+        "price": 1299,
+        "image": "https://picsum.photos/200/200?random=112"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "电视",
+    "products": [
+      {
+        "id": 13,
+        "name": "小米电视ES 2025",
+        "price": 2999,
+        "image": "https://picsum.photos/200/200?random=113"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "空调",
+    "products": [
+      {
+        "id": 14,
+        "name": "米家空调",
+        "price": 1999,
+        "image": "https://picsum.photos/200/200?random=114"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "冰洗烘电",
+    "products": [
+      {
+        "id": 15,
+        "name": "米家洗衣机",
+        "price": 1599,
+        "image": "https://picsum.photos/200/200?random=115"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "小家电",
+    "products": [
+      {
+        "id": 16,
+        "name": "米家电饭煲",
+        "price": 399,
+        "image": "https://picsum.photos/200/200?random=116"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "智能家居",
+    "products": [
+      {
+        "id": 17,
+        "name": "小米智能门锁",
+        "price": 1299,
+        "image": "https://picsum.photos/200/200?random=117"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "出行运动",
+    "products": [
+      {
+        "id": 18,
+        "name": "小米电动滑板车",
+        "price": 1999,
+        "image": "https://picsum.photos/200/200?random=118"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "车周边",
+    "products": [
+      {
+        "id": 19,
+        "name": "小米车载充电器",
+        "price": 99,
+        "image": "https://picsum.photos/200/200?random=119"
+      }
+    ]
+  }
+]

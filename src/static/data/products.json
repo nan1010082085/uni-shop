@@ -1,0 +1,107 @@
+{
+  "hotProducts": [
+    {
+      "id": 1,
+      "name": "REDMI K80 至尊版",
+      "price": 3999,
+      "originalPrice": 4299,
+      "image": "https://picsum.photos/200/200?random=1",
+      "tag": "新",
+      "description": "天玑9400+ | 新一代骁龙芯"
+    },
+    {
+      "id": 2,
+      "name": "小米手环10",
+      "price": 299,
+      "image": "https://picsum.photos/200/200?random=2",
+      "tag": "新",
+      "description": "健康监测 | 运动追踪"
+    },
+    {
+      "id": 3,
+      "name": "REDMI Turbo 4 Pro",
+      "price": 2299,
+      "image": "https://picsum.photos/200/200?random=3",
+      "tag": "新",
+      "description": "性能旗舰 | 游戏利器"
+    },
+    {
+      "id": 4,
+      "name": "米家智能电饭煲P1",
+      "price": 399,
+      "image": "https://picsum.photos/200/200?random=4",
+      "description": "智能烹饪 | 营养保鲜"
+    },
+    {
+      "id": 5,
+      "name": "REDMI K80系列",
+      "price": 2999,
+      "image": "https://picsum.photos/200/200?random=5",
+      "tag": "🔥",
+      "description": "骁龙8 Gen3 | 120W快充"
+    },
+    {
+      "id": 6,
+      "name": "小米室外摄像机4",
+      "price": 299,
+      "image": "https://picsum.photos/200/200?random=6",
+      "description": "4K画质 | 夜视功能"
+    },
+    {
+      "id": 7,
+      "name": "Xiaomi 15 系列",
+      "price": 4999,
+      "originalPrice": 5499,
+      "image": "https://picsum.photos/200/200?random=7",
+      "tag": "新",
+      "description": "徕卡影像 | 骁龙8 Elite"
+    },
+    {
+      "id": 8,
+      "name": "米家无线洗地机4",
+      "price": 1299,
+      "image": "https://picsum.photos/200/200?random=8",
+      "description": "自清洁 | 智能感应"
+    },
+    {
+      "id": 9,
+      "name": "Redmi Note 14系列",
+      "price": 1299,
+      "image": "https://picsum.photos/200/200?random=9",
+      "tag": "💚",
+      "description": "5000mAh大电池 | 67W快充"
+    },
+    {
+      "id": 10,
+      "name": "米家冰箱 巨能装Pro法式513L",
+      "price": 2999,
+      "image": "https://picsum.photos/200/200?random=10",
+      "description": "大容量 | 变频节能"
+    },
+    {
+      "id": 11,
+      "name": "小米电视ES 2025",
+      "price": 1999,
+      "image": "https://picsum.photos/200/200?random=11",
+      "description": "4K HDR | 杜比视界"
+    },
+    {
+      "id": 12,
+      "name": "米家空调",
+      "price": 1599,
+      "image": "https://picsum.photos/200/200?random=12",
+      "description": "变频节能 | 智能控制"
+    }
+  ],
+  "searchSuggestions": [
+    "空调",
+    "充电宝",
+    "洗衣机",
+    "笔记本",
+    "电视",
+    "路由器",
+    "油烟机",
+    "小米手环",
+    "智能门锁"
+  ]
+}

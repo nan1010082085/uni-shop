@@ -1,0 +1,88 @@
+{
+  "bannerList": [
+    "https://picsum.photos/750/300?random=1",
+    "https://picsum.photos/750/300?random=2",
+    "https://picsum.photos/750/300?random=3"
+  ],
+  "categoryList": [
+    { "id": 1, "name": "手机", "icon": "https://picsum.photos/80/80?random=10" },
+    { "id": 2, "name": "电脑", "icon": "https://picsum.photos/80/80?random=11" },
+    { "id": 3, "name": "耳机", "icon": "https://picsum.photos/80/80?random=12" },
+    { "id": 4, "name": "手表", "icon": "https://picsum.photos/80/80?random=13" },
+    { "id": 5, "name": "家居", "icon": "https://picsum.photos/80/80?random=14" },
+    { "id": 6, "name": "服装", "icon": "https://picsum.photos/80/80?random=15" },
+    { "id": 7, "name": "美妆", "icon": "https://picsum.photos/80/80?random=16" },
+    { "id": 8, "name": "运动", "icon": "https://picsum.photos/80/80?random=17" },
+    { "id": 9, "name": "图书", "icon": "https://picsum.photos/80/80?random=18" },
+    { "id": 10, "name": "更多", "icon": "https://picsum.photos/80/80?random=19" }
+  ],
+  "activityBanner": "https://picsum.photos/750/200?random=20",
+  "hotProducts": [
+    {
+      "id": 1,
+      "name": "iPhone 15 Pro",
+      "price": 7999,
+      "image": "https://picsum.photos/200/200?random=21"
+    },
+    {
+      "id": 2,
+      "name": "MacBook Pro",
+      "price": 12999,
+      "image": "https://picsum.photos/200/200?random=22"
+    },
+    {
+      "id": 3,
+      "name": "AirPods Pro",
+      "price": 1899,
+      "image": "https://picsum.photos/200/200?random=23"
+    },
+    {
+      "id": 4,
+      "name": "Apple Watch",
+      "price": 2999,
+      "image": "https://picsum.photos/200/200?random=24"
+    }
+  ],
+  "recommendProductNames": [
+    "小米手机13",
+    "华为Mate50",
+    "OPPO Find X5",
+    "vivo X90",
+    "一加11",
+    "联想ThinkPad",
+    "戴尔XPS",
+    "华硕ROG",
+    "Surface Pro",
+    "iPad Pro",
+    "Sony耳机",
+    "Bose音响",
+    "JBL蓝牙",
+    "Beats耳机",
+    "AKG监听",
+    "华为手表",
+    "小米手环",
+    "Garmin运动",
+    "Fitbit健康",
+    "Apple Watch",
+    "宜家家居",
+    "无印良品",
+    "网易严选",
+    "小米有品",
+    "京造精品",
+    "Nike运动鞋",
+    "Adidas球鞋",
+    "New Balance",
+    "Converse帆布",
+    "Vans滑板",
+    "兰蔻面霜",
+    "雅诗兰黛",
+    "欧莱雅护肤",
+    "SK-II神仙水",
+    "资生堂精华",
+    "瑜伽垫",
+    "哑铃套装",
+    "跑步机",
+    "健身器材",
+    "运动服装"
+  ]
+}
