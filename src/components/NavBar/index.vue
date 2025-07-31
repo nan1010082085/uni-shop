@@ -7,6 +7,9 @@
         <u-line direction="column" :hairline="false" length="16" margin="0 8px"></u-line>
         <u-icon name="home" size="20" @click="handleHome"></u-icon>
       </view>
+      <view v-else-if="notTabbar">
+        <u-icon name="arrow-left" size="19" @click="handleBack"></u-icon>
+      </view>
       <view v-else></view>
     </template>
     <template #right>
@@ -25,17 +28,23 @@ const props = defineProps({
     default: '标题',
     required: true,
   },
+  hideLeft: {
+    type: Boolean,
+    default: undefined,
+  },
 })
 
 const router = useRouter()
 const route = useRoute()
 
 // 不在tabbar的路由显示左侧返回按钮
-const hideLeft = computed(() => {
-  console.log(route?.path)
+const notTabbar = computed(() => {
   let path = getCurrentPages()[getCurrentPages().length - 1].route ?? ''
+  console.log(tabbarPath.includes(`/${path}`))
+
   return !tabbarPath.includes(`/${path}`)
 })
+const hideLeft = computed(() => props.hideLeft)
 
 const handleBack = () => {
   const redirect = decodeURIComponent(route.query.redirect)

@@ -143,7 +143,13 @@ const loadDiscoverProducts = async () => {
  * 处理编辑资料点击
  */
 const handleEditProfile = () => {
-  router.push('/pages/profile/edit')
+  router.push({
+    path: '/pages/profile/edit',
+    query: {
+      redirect: route.path,
+      id: userData.userInfo.id,
+    },
+  })
 }
 
 /**
@@ -151,7 +157,13 @@ const handleEditProfile = () => {
  * @param path - 跳转路径
  */
 const handleMenuClick = (path: string) => {
-  router.push(path)
+  router.push({
+    path: path,
+    query: {
+      redirect: route.path,
+      id: userData.userInfo.id,
+    },
+  })
 }
 
 /**

@@ -131,6 +131,7 @@ import TabBar from '@/components/TabBar/index.vue'
 import RecommendList from '@/components/RecommendList/index.vue'
 import http from '@/api/request'
 import { uToast } from '@/utils'
+import CartData from '@/static/data/cart.json'
 
 /**
  * 购物车商品接口
@@ -230,11 +231,13 @@ const savedAmount = computed(() => {
 const loadCartData = async (): Promise<void> => {
   try {
     // 模拟从静态文件加载数据
-    const response = await http.get('/static/data/cart.json')
-    const data: CartData = response.data
+    // const response = await http.get('/static/data/cart.json')
+    // const data: CartData = response.data
 
-    cartItems.value = data.cartItems
-    recommendProducts.value = data.recommendProducts
+    // cartItems.value = data.cartItems
+    // recommendProducts.value = data.recommendProducts
+    cartItems.value = CartData.cartItems
+    recommendProducts.value = CartData.recommendProducts
   } catch (error) {
     console.error('加载购物车数据失败:', error)
     // 使用默认数据
@@ -391,7 +394,7 @@ onMounted(() => {
 .cart-page {
   min-height: 100vh;
   background-color: #f5f5f5;
-  padding-top: 80rpx;
+  padding-top: 88rpx;
   padding-bottom: 130rpx;
 }
 
@@ -541,7 +544,6 @@ onMounted(() => {
   background: #fff;
   border-radius: 16rpx;
   overflow: hidden;
-
 }
 
 // 底部结算栏样式

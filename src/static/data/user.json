@@ -15,28 +15,28 @@
       "name": "优惠券",
       "icon": "coupon",
       "color": "#ff6b35",
-      "path": "/pages/coupon/index"
+      "path": "/pages/profile/coupon"
     },
     {
       "id": 2,
       "name": "我的积分",
       "icon": "gift",
       "color": "#4285f4",
-      "path": "/pages/points/index"
+      "path": "/pages/profile/points"
     },
     {
       "id": 3,
       "name": "我的收藏",
       "icon": "star",
       "color": "#34a853",
-      "path": "/pages/collection/index"
+      "path": "/pages/profile/collect"
     },
     {
       "id": 4,
-      "name": "客户反馈",
+      "name": "信息",
       "icon": "chat",
       "color": "#9c27b0",
-      "path": "/pages/feedback/index"
+      "path": "/pages/profile/news"
     }
   ],
   "orderStatus": [

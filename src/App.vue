@@ -12,4 +12,5 @@
 </script>
 <style lang="scss">
 	@import "@/uni_modules/uview-next/index.scss";
+  @import "@/styles/index.scss";
 </style>

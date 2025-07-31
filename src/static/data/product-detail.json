@@ -1,0 +1,103 @@
+{
+  "productDetail": {
+    "id": 1,
+    "name": "REDMI K80 至尊版",
+    "price": 3999,
+    "originalPrice": 4299,
+    "images": [
+      "https://picsum.photos/400/400?random=1",
+      "https://picsum.photos/400/400?random=2",
+      "https://picsum.photos/400/400?random=3",
+      "https://picsum.photos/400/400?random=4",
+      "https://picsum.photos/400/400?random=5"
+    ],
+    "description": "天玑9400+ | 新一代骁龙芯片 | 120W快充 | 5000mAh大电池",
+    "tag": "新品",
+    "sales": 12580,
+    "stock": 999,
+    "specifications": [
+      {
+        "id": 1,
+        "name": "颜色",
+        "options": [
+          {
+            "id": 1,
+            "name": "曜石黑",
+            "value": "black",
+            "stock": 100
+          },
+          {
+            "id": 2,
+            "name": "冰川蓝",
+            "value": "blue",
+            "stock": 80
+          },
+          {
+            "id": 3,
+            "name": "星河银",
+            "value": "silver",
+            "stock": 60
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "存储",
+        "options": [
+          {
+            "id": 4,
+            "name": "12GB+256GB",
+            "value": "12+256",
+            "price": 3999,
+            "stock": 50
+          },
+          {
+            "id": 5,
+            "name": "16GB+512GB",
+            "value": "16+512",
+            "price": 4299,
+            "stock": 30
+          },
+          {
+            "id": 6,
+            "name": "16GB+1TB",
+            "value": "16+1024",
+            "price": 4799,
+            "stock": 20
+          }
+        ]
+      }
+    ],
+    "details": "REDMI K80 至尊版搭载全新天玑9400+处理器，采用台积电3nm工艺制程，性能强劲。配备6.67英寸2K OLED曲面屏，支持120Hz高刷新率，显示效果细腻流畅。内置5000mAh大容量电池，支持120W有线快充和50W无线快充，续航无忧。后置5000万像素主摄+1300万像素超广角+200万像素微距三摄组合，拍照表现出色。",
+    "reviews": [
+      {
+        "id": 1,
+        "userName": "数码达人",
+        "avatar": "https://picsum.photos/50/50?random=10",
+        "rating": 5,
+        "content": "性能很强，游戏体验非常好，充电速度也很快！",
+        "images": [
+          "https://picsum.photos/100/100?random=20",
+          "https://picsum.photos/100/100?random=21"
+        ],
+        "createTime": "2024-01-15"
+      },
+      {
+        "id": 2,
+        "userName": "科技爱好者",
+        "avatar": "https://picsum.photos/50/50?random=11",
+        "rating": 4,
+        "content": "屏幕显示效果很棒，拍照也不错，就是有点重。",
+        "createTime": "2024-01-12"
+      },
+      {
+        "id": 3,
+        "userName": "手机控",
+        "avatar": "https://picsum.photos/50/50?random=12",
+        "rating": 5,
+        "content": "外观设计很漂亮，系统流畅，值得推荐！",
+        "createTime": "2024-01-10"
+      }
+    ]
+  }
+}

@@ -22,6 +22,7 @@ import { ref, watch } from 'vue'
 // 引入瀑布流组件
 // pages设置失效
 import waterfall from '@/uni_modules/uview-next/components/u-waterfall/u-waterfall.vue'
+import { useRoute, useRouter } from '@/router'
 
 defineOptions({
   component: [waterfall],
@@ -45,6 +46,9 @@ interface WaterfallProps {
 
 const props = defineProps<WaterfallProps>()
 
+const router = useRouter()
+const route = useRoute()
+
 // uView waterfall组件的数据
 const waterfallData = ref<Product[]>([])
 const uWaterfall = ref()
@@ -53,9 +57,13 @@ const uWaterfall = ref()
 const handleProductClick = (product: any) => {
   console.log('点击商品:', product as Product)
   // 这里可以添加跳转到商品详情页的逻辑
-  // uni.navigateTo({
-  //   url: `/pages/product/detail?id=${product.id}`,
-  // })
+  router.push({
+    path: `/pages/commodity_details/index`,
+    query: {
+      redirect: route.path,
+      id: product.id,
+    }
+  })
 }
 
 // 监听props变化，更新瀑布流数据

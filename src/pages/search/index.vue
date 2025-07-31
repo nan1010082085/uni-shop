@@ -5,7 +5,7 @@
       <view class="search-bar">
         <u-icon name="arrow-left" size="20" color="#303133" @click="handleBack" />
         <view class="search-input-wrapper">
-          <u-search
+          <u-search 
             v-model="searchValue"
             placeholder="搜索商品"
             :show-action="false"
@@ -355,6 +355,9 @@ onMounted(() => {
   background-color: #fff;
   // #ifdef MP-WEIXIN
   padding-top: 160rpx;
+  // #endif
+  // #ifdef APP-PLUS
+  padding-top: 40rpx;
   // #endif
 
   .search-bar {

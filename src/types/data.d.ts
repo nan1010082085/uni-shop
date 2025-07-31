@@ -12,6 +12,57 @@ export interface Product {
 }
 
 /**
+ * 商品详情接口
+ */
+export interface ProductDetail {
+  id: number
+  name: string
+  price: number
+  originalPrice?: number
+  images: string[]
+  description: string
+  tag?: string
+  sales: number
+  stock: number
+  specifications: ProductSpec[]
+  details: string
+  reviews: ProductReview[]
+}
+
+/**
+ * 商品规格接口
+ */
+export interface ProductSpec {
+  id: number
+  name: string
+  options: SpecOption[]
+}
+
+/**
+ * 规格选项接口
+ */
+export interface SpecOption {
+  id: number
+  name: string
+  value: string
+  price?: number
+  stock?: number
+}
+
+/**
+ * 商品评价接口
+ */
+export interface ProductReview {
+  id: number
+  userName: string
+  avatar: string
+  rating: number
+  content: string
+  images?: string[]
+  createTime: string
+}
+
+/**
  * 分类接口
  */
 export interface Category {

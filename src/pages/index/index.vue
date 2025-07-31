@@ -7,6 +7,7 @@
         placeholder="搜索商品"
         :show-action="false"
         shape="round"
+        disabled
         bg-color="#ffffff"
         @click="handleSearchClick"
       />
@@ -180,7 +181,7 @@ onMounted(() => {
 .index-page {
   background-color: #f5f5f5;
   min-height: 100vh;
-  padding-top: 90rpx;
+  padding-top: 88rpx;
   // #ifdef MP-WEIXIN
   padding-top: 0rpx;
   // #endif

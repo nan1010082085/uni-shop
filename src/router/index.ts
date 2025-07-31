@@ -7,11 +7,9 @@ const router = createRouter({
   pageData: PGAE_DATA,
 })
 
-router.beforeEach((to: any, from: any) => {
-  console.log(from)
-
-  console.log('beforeEach', to, from)
-})
+// router.beforeEach((to: any, from: any) => {
+//   console.log('beforeEach', to, from)
+// })
 
 // router.afterEach((to, from) => {
 //   console.log('afterEach', to, from)

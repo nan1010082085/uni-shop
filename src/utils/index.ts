@@ -1,8 +1,8 @@
 export const $u = uni.$u
-export const currentPlatform = $u.platform
-export const getSys = $u.sys()
-export const isOs = $u.os()
-export const isIos = $u.os() == 'ios'
-export const isAndroid = $u.os() == 'android'
-export const uToast = $u.toast
-export const uRoute = $u.route
+export const currentPlatform = uni.$u?.platform
+export const getSys = uni.$u?.sys()
+export const isOs = uni.$u?.os()
+export const isIos = uni.$u?.os() == 'ios'
+export const isAndroid = uni.$u?.os() == 'android'
+export const uToast = uni.$u?.toast
+export const uRoute = uni.$u?.route

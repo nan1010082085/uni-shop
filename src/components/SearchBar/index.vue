@@ -10,7 +10,7 @@
       :border-color="borderColor"
       :height="height"
       :margin="margin"
-      @focus="handleFocus"
+      @click="handleClick"
       @search="handleSearch"
       @clear="handleClear"
     >
@@ -80,8 +80,7 @@ const route = useRoute()
 /**
  * 处理点击搜索栏
  */
-const handleFocus = (): void => {
-  console.log('just focus')
+const handleClick = (): void => {
   // 跳转到搜索页面
   router.push({
     path: '/pages/search/index',
@@ -89,7 +88,7 @@ const handleFocus = (): void => {
       redirect: route.path,
     },
   })
-  // emit('click')
+  emit('click')
 }
 
 /**

@@ -1,7 +1,7 @@
 <template>
   <view class="classify-wrap">
     <!-- 搜索栏 -->
-    <search-bar style="padding: 20rpx" @click="handleSearchClick" @search="handleSearch" @scan="handleScan" />
+    <search-bar class="classify-search" disabled @click="handleSearchClick" @search="handleSearch" @scan="handleScan" />
 
     <!-- 分类内容 -->
     <view class="classify-content">
@@ -223,7 +223,14 @@ onMounted(() => {
   flex-direction: column;
   position: relative;
   // #ifdef MP-WEIXIN
-  padding-top: 120rpx;
+  padding-top: 108rpx;
+  // #endif
+}
+
+.classify-search {
+  padding: 20rpx;
+  // #ifdef APP-PLUS
+  padding-top: 40rpx !important;
   // #endif
 }
 
@@ -231,7 +238,10 @@ onMounted(() => {
   flex: 1;
   display: flex;
   overflow: hidden;
-  padding-top: 120rpx; /* 为固定搜索栏留出空间 */
+  padding-top: 110rpx; /* 为固定搜索栏留出空间 */
+    // #ifdef APP-PLUS
+  padding-top: 130rpx;
+  // #endif
 }
 
 .category-sidebar {

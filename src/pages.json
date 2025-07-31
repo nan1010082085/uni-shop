@@ -54,7 +54,58 @@
         "navigationBarTitleText": "搜索",
         "navigationStyle": "custom"
       }
+    },
+    {
+      "path": "pages/commodity_details/index",
+      "style": {
+        "navigationBarTitleText": "商品详情",
+        "navigationStyle": "custom"
+      }
+    },
+    // 个人中心 profile
+    {
+      "path": "pages/profile/edit",
+      "style": {
+        "navigationBarTitleText": "编辑资料",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/coupon",
+      "style": {
+        "navigationBarTitleText": "优惠券",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/points",
+      "style": {
+        "navigationBarTitleText": "我的积分",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/collect",
+      "style": {
+        "navigationBarTitleText": "我的收藏",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/news",
+      "style": {
+        "navigationBarTitleText": "我的消息",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/address",
+      "style": {
+        "navigationBarTitleText": "地址管理",
+        "navigationStyle": "custom"
+      }
     }
+    // ----
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",

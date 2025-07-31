@@ -1,21 +1,22 @@
 <template>
+  <nav-bar title="订单列表" hideLeft />
   <view class="order-page">
-    <nav-bar title="订单" />
-
     <!-- 订单状态标签栏 -->
     <view class="order-tabs">
-      <u-grid :col="5">
-        <u-grid-item v-for="(item, index) in orderTabs" class="tab-item" @click="handleTabChange(index)">
-          <text class="tab-text">{{ item?.name || '' }}</text>
-          <u-badge
-            v-if="item?.count && item.count > 0"
-            :value="item.count"
-            max="99"
-            :offset="[7, -2]"
-            :absolute="true"
-            bgColor="#ff6b35"
-            size="mini"
-          />
+      <u-grid :col="5" class="order-grid">
+        <u-grid-item v-for="(item, index) in orderTabs" @click="handleTabChange(index)">
+          <view class="tab-item">
+            <text class="tab-text">{{ item?.name || '' }}</text>
+            <u-badge
+              v-if="item?.count && item.count > 0"
+              :value="item.count"
+              max="99"
+              :offset="badgeOffset"
+              :absolute="true"
+              bgColor="#ff6b35"
+              size="mini"
+            />
+          </view>
         </u-grid-item>
       </u-grid>
       <view
@@ -23,32 +24,7 @@
         :style="{
           left: tranformX,
         }"
-      ></view>
-      <!-- <u-tabs
-        :list="orderTabs"
-        :current="currentTab"
-        @change="handleTabChange"
-        :scrollable="false"
-        lineColor="#ff6b35"
-        activeColor="#ff6b35"
-        inactiveColor="#666"
-        lineWidth="30"
-        lineHeight="3"
-        :itemStyle="{ padding: '0 20rpx' }"
-      >
-        <template #default="{ item, index }">
-          <view class="tab-item">
-            <text class="tab-text">{{ item?.name || '' }}</text>
-            <u-badge
-              v-if="item?.count && item.count > 0"
-              :value="item.count"
-              :offset="[5, -5]"
-              bgColor="#ff6b35"
-              size="mini"
-            />
-          </view>
-        </template>
-      </u-tabs> -->
+      />
     </view>
 
     <!-- 订单列表 -->
@@ -134,10 +110,11 @@ import NavBar from '@/components/NavBar/index.vue'
 import type { OrderData, Order, OrderAction } from '@/types/data.d'
 import { uToast } from '@/utils'
 import { onLoad } from '@dcloudio/uni-app'
+import OrdersData from '@/static/data/orders.json'
 
 const router = useRouter()
 const route = useRoute()
-const instance = getCurrentInstance()
+// const instance = getCurrentInstance()
 // 响应式数据
 const orderData = ref<OrderData>({ orderTabs: [], orders: [] })
 const currentTab = ref<number>(0)
@@ -146,6 +123,10 @@ const orderTabs = computed(() => orderData.value.orderTabs || [])
 const tranformX = computed(() => {
   let index = currentTab.value
   return `calc(30rpx + ((100vw - 60rpx) / 5) * ${index})`
+})
+const badgeOffset = computed(() => {
+  let offset = ['12rpx', '-22rpx']
+  return offset
 })
 
 /**
@@ -174,11 +155,11 @@ const filteredOrders = computed(() => {
 const loadOrderData = async (): Promise<void> => {
   try {
     loading.value = true
-    const response = await http.get('/static/data/orders.json')
-    console.log('response', response)
+    // const response = await http.get('/static/data/orders.json')
+    // console.log('response', response)
 
-    orderData.value = response.data
-
+    // orderData.value = response.data
+    orderData.value = OrdersData
     // 更新标签计数
     updateTabCounts()
   } catch (error) {
@@ -408,27 +389,29 @@ const init = () => {
   }
   loadOrderData()
 }
-// 生命周期
-// #ifdef APP-PLUS
-onLoad(init)
-// #endif
-// #ifdef H5 || MP-WEIXIN
+
 onMounted(init)
-// #endif
 </script>
 
 <style lang="scss" scoped>
 .order-page {
   min-height: 100vh;
   background-color: #f5f5f5;
-  padding-top: 90rpx;
+  padding-top: 88rpx;
+  // #ifdef MP-WEIXIN
+  padding-top: 177rpx;
+  // #endif
 }
 
 .order-tabs {
   position: relative;
   background-color: #fff;
   padding: 0 30rpx;
-  border-bottom: 1px solid #eee;
+  height: 88rpx;
+
+  .order-grid {
+    height: 88rpx;
+  }
 
   .tab-item {
     position: relative;
@@ -439,6 +422,7 @@ onMounted(init)
 
     .tab-text {
       font-size: 28rpx;
+      line-height: 88rpx;
       font-weight: 500;
     }
   }
