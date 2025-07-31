@@ -38,15 +38,15 @@
       <view class="order-status">
         <view
           class="status-item"
-          v-for="status in userData.orderStatus"
-          :key="status.id"
-          @click="handleOrderClick(status.path)"
+          v-for="item in userData.orderStatus"
+          :key="item.id"
+          @click="handleOrderClick(item.path, item.status || 0)"
         >
           <view class="status-icon">
-            <u-icon :name="status.icon" size="24" color="#666" />
-            <u-badge v-if="status.count > 0" :count="status.count" :offset="[5, 5]" />
+            <u-icon :name="item.icon" size="24" color="#666" />
+            <u-badge v-if="item.count > 0" :count="item.count" :offset="[5, 5]" />
           </view>
-          <text class="status-text">{{ status.name }}</text>
+          <text class="status-text">{{ item.name }}</text>
         </view>
       </view>
     </view>
@@ -94,7 +94,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRouter } from '@/router'
+import { useRoute, useRouter } from '@/router'
 import TabBar from '@/components/TabBar/index.vue'
 import RecommendList from '@/components/RecommendList/index.vue'
 import http from '@/api/request'
@@ -102,6 +102,7 @@ import type { UserData, DiscoverProduct } from '@/types/data'
 import userData from '@/static/data/user.json'
 
 const router = useRouter()
+const route = useRoute()
 const discoverList = ref<DiscoverProduct[]>([])
 
 /**
@@ -160,6 +161,7 @@ const handleViewAllOrders = () => {
   router.push({
     path: '/pages/order/index',
     query: {
+      redirect: route.path,
       status: 0,
     },
   })
@@ -169,8 +171,14 @@ const handleViewAllOrders = () => {
  * 处理订单状态点击
  * @param path - 跳转路径
  */
-const handleOrderClick = (path: string) => {
-  router.push(path)
+const handleOrderClick = (path: string, status: number) => {
+  router.push({
+    path: path,
+    query: {
+      redirect: route.path,
+      status,
+    },
+  })
 }
 
 /**
@@ -192,6 +200,9 @@ const handleServiceClick = (path: string) => {
 .user-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 40rpx 30rpx 30rpx;
+  // #ifdef MP-WEIXIN
+  padding-top: 160rpx;
+  // #endif
   color: white;
 
   .user-info {

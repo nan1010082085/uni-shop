@@ -64,6 +64,7 @@ export interface OrderStatus {
   icon: string
   count: number
   path: string
+  status: number
 }
 
 export interface ServiceItem {

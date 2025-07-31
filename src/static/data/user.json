@@ -45,35 +45,39 @@
       "name": "待付款",
       "icon": "clock",
       "count": 2,
-      "path": "/pages/order/index?status=1"
+      "path": "/pages/order/index",
+      "status": 1
     },
     {
       "id": 2,
       "name": "待发货",
       "icon": "car",
       "count": 1,
-      "path": "/pages/order/index?status=2"
+      "path": "/pages/order/index",
+      "status": 2
     },
     {
       "id": 3,
       "name": "待收货",
       "icon": "map",
       "count": 0,
-      "path": "/pages/order/index?status=3"
+      "path": "/pages/order/index",
+      "status": 3
     },
     {
       "id": 4,
       "name": "待评价",
       "icon": "thumb-up",
       "count": 1,
-      "path": "/pages/order/index?status=4"
+      "path": "/pages/order/index",
+      "status": 4
     },
     {
       "id": 5,
       "name": "售后",
       "icon": "reload",
       "count": 0,
-      "path": "/pages/order/index?status=5"
+      "path": "/pages/order/index"
     }
   ],
   "serviceItems": [

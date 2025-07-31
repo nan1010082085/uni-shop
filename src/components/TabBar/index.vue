@@ -10,8 +10,8 @@
   </u-tabbar>
 </template>
 <script setup lang="ts">
-uni.hideTabBar()
 import { useRouter } from '@/router'
+import { onLoad } from '@dcloudio/uni-app'
 const list = [
   {
     pagePath: 'pages/index/index',
@@ -41,6 +41,9 @@ const handleChange = (index: number) => {
     path: `/${list[index].pagePath}`,
   })
 }
+onLoad(() => {
+  uni.hideTabBar()
+})
 </script>
 
 <style lang="scss" scoped></style>

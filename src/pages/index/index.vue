@@ -38,7 +38,7 @@
 
     <!-- 活动横幅 -->
     <view class="activity-section">
-      <u--image class="activity-banner" :src="activityBanner" width="100%" height="100%" @click="handleActivityClick" />
+      <image class="activity-banner" :src="activityBanner" width="100%" height="100%" @click="handleActivityClick" />
     </view>
 
     <!-- 热门商品 -->
@@ -180,11 +180,18 @@ onMounted(() => {
 .index-page {
   background-color: #f5f5f5;
   min-height: 100vh;
-  padding-top: 80rpx;
+  padding-top: 90rpx;
+  // #ifdef MP-WEIXIN
+  padding-top: 0rpx;
+  // #endif
 }
 
 .search-section {
-  padding: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+  // #ifdef MP-WEIXIN
+  padding-bottom: 0rpx;
+  // #endif
 }
 
 .banner-section {

@@ -15,19 +15,14 @@
       @clear="handleClear"
     >
       <template #suffix>
-        <u-icon
-          name="scan"
-          size="20"
-          color="#909399"
-          @click="handleScan"
-        />
+        <u-icon name="scan" size="20" color="#909399" @click="handleScan" />
       </template>
     </u-search>
   </view>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from '@/router'
+import { useRoute, useRouter } from '@/router'
 import { ref } from 'vue'
 
 /**
@@ -71,7 +66,7 @@ const props = withDefaults(defineProps<SearchBarProps>(), {
   color: '#606266',
   borderColor: 'transparent',
   height: '64rpx',
-  margin: '0 30rpx'
+  margin: '0 30rpx',
 })
 
 const emit = defineEmits<SearchBarEmits>()
@@ -80,18 +75,21 @@ const emit = defineEmits<SearchBarEmits>()
 const searchValue = ref('')
 
 const router = useRouter()
+const route = useRoute()
 
 /**
  * 处理点击搜索栏
  */
 const handleFocus = (): void => {
-  console.log('just focus');
-  
+  console.log('just focus')
   // 跳转到搜索页面
   router.push({
-    path: '/pages/search/index'
+    path: '/pages/search/index',
+    query: {
+      redirect: route.path,
+    },
   })
-  emit('click')
+  // emit('click')
 }
 
 /**
@@ -119,4 +117,10 @@ const handleScan = (): void => {
 </script>
 
 <style lang="scss" scoped>
+.search-bar {
+  // #ifdef MP-WEIXIN
+  padding-top: 160rpx;
+  padding-bottom: 20rpx;
+  // #endif
+}
 </style>

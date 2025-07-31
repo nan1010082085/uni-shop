@@ -38,10 +38,17 @@ const hideLeft = computed(() => {
 })
 
 const handleBack = () => {
-  let page = getCurrentPages()
-  let backRoute = page[page.length - 2].route
-  if (tabbarPath.includes(`/${backRoute}`)) {
-    router.pushTab(`/${backRoute}`)
+  const redirect = decodeURIComponent(route.query.redirect)
+  if (redirect) {
+    if (tabbarPath.includes(`/${redirect}`)) {
+      router.pushTab({
+        path: `/${redirect}`,
+      })
+    } else {
+      router.replace({
+        path: redirect,
+      })
+    }
   } else {
     uni.navigateBack()
   }
@@ -49,7 +56,9 @@ const handleBack = () => {
 
 const handleHome = () => {
   const index = `/pages/index/index`
-  router.pushTab(index)
+  uni.switchTab({
+    url: index,
+  })
 }
 </script>
 

@@ -1,12 +1,15 @@
 import { createRouter } from '@gowiny/uni-router'
 import PGAE_DATA from '@/pages.json'
 import { onLoad, onShow } from '@dcloudio/uni-app'
+import { onMounted } from 'vue'
 
 const router = createRouter({
   pageData: PGAE_DATA,
 })
 
-router.beforeEach((to, from) => {
+router.beforeEach((to: any, from: any) => {
+  console.log(from)
+
   console.log('beforeEach', to, from)
 })
 
@@ -28,24 +31,44 @@ export const useRoute = (): Route => {
   let route: any = {}
   let query: any = {}
 
-  // #ifndef APP-PLUS
+  // #ifdef APP-PLUS
   onLoad(options => {
     query = options
   })
   // #endif
-  onShow(() => {
+  onMounted(() => {
     let len = getCurrentPages().length
     let instance: any = getCurrentPages()?.[len - 1] ?? {}
-    // #ifndef APP-PLUS
+    // #ifdef APP-PLUS
     query = instance?.options ?? {}
     // #endif
     route.fullPath = instance.$page?.fullPath ?? ''
     route.type = instance.$page?.openType ?? ''
     route.path = instance.route ?? ''
-    route.query = query
+    
+    const pathQuery = resolverPathToQuery(route.fullPath)
+    route.query = { ...pathQuery, ...query }
   })
 
   return route as Route
+}
+
+/**
+ * 解析路径参数
+ * @param path 路径
+ * @returns 解析后的参数
+ */
+function resolverPathToQuery(path: string) {
+  let data: any = {}
+  if (path.indexOf('?') > -1) {
+    let query = path.split('?')[1]
+    let queryArr = query.split('&')
+    queryArr.forEach(item => {
+      let [key, value] = item.split('=')
+      data[key] = decodeURIComponent(value)
+    })
+  }
+  return data
 }
 
 export default router

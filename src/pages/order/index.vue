@@ -402,22 +402,17 @@ const handleService = (order: Order): void => {
 const init = () => {
   // 获取URL参数中的状态
   const options = route?.query || {}
-  console.log(route, options)
-
   // 根据状态参数设置当前标签
   if (options.status) {
-    const statusIndex = parseInt(options.status) - 1
-    if (statusIndex >= 0 && statusIndex < 5) {
-      currentTab.value = statusIndex + 1 // +1 因为第一个是"全部"
-    }
+    currentTab.value = Number(options.status)
   }
   loadOrderData()
 }
 // 生命周期
-// #ifndef APP-PLUS
+// #ifdef APP-PLUS
 onLoad(init)
 // #endif
-// #ifndef H5 || MP-WEIXIN
+// #ifdef H5 || MP-WEIXIN
 onMounted(init)
 // #endif
 </script>

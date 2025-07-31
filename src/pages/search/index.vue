@@ -9,7 +9,7 @@
             v-model="searchValue"
             placeholder="搜索商品"
             :show-action="false"
-            bg-color="#ffffff"
+            bg-color="#f8f8f8"
             border-color="transparent"
             height="70rpx"
             margin="0 20rpx"
@@ -29,16 +29,9 @@
     </view>
     <view v-if="!isSearching && searchHistory.length > 0" class="search-section">
       <view class="history-tags">
-        <u-tag
-          v-for="(item, index) in searchHistory"
-          :key="index"
-          :text="item"
-          type="info"
-          plain
-          size="medium"
-          @click="handleHistoryClick(item)"
-          style="margin: 0 12rpx 12rpx 0; background-color: #fff"
-        />
+        <view class="tag" v-for="(item, index) in searchHistory">
+          <u-tag :key="index" :text="item" type="info" plain size="medium" @click="handleHistoryClick(item)" />
+        </view>
       </view>
     </view>
 
@@ -49,16 +42,9 @@
     </view>
     <view v-if="!isSearching" class="search-section">
       <view class="suggestion-tags">
-        <u-tag
-          v-for="(item, index) in searchSuggestions"
-          :key="index"
-          :text="item"
-          type="primary"
-          plain
-          size="medium"
-          @click="handleSuggestionClick(item)"
-          style="margin: 0 12rpx 12rpx 0"
-        />
+        <view class="tag" v-for="(item, index) in searchSuggestions">
+          <u-tag :key="index" :text="item" type="primary" plain size="medium" @click="handleSuggestionClick(item)" />
+        </view>
       </view>
     </view>
 
@@ -70,7 +56,7 @@
     </view>
     <view v-if="!isSearching" class="search-section">
       <!-- 瀑布流商品展示 -->
-      <recommend-list :products="hotProducts" @productClick="handleProductClick" />
+      <RecommendList :products="hotProducts" @productClick="handleProductClick" />
     </view>
 
     <!-- 搜索结果 -->
@@ -79,7 +65,7 @@
         <u-empty mode="search" text="暂无搜索结果" textColor="#909399" textSize="28rpx" />
       </view>
       <view v-else>
-        <recommend-list :products="searchResults" @productClick="handleProductClick" />
+        <RecommendList :products="searchResults" @productClick="handleProductClick" />
       </view>
     </view>
   </view>
@@ -88,11 +74,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import RecommendList from '@/components/RecommendList/index.vue'
-import { useRouter } from '@/router'
-import http from '@/api/request'
+import { useRoute, useRouter } from '@/router'
+// import http from '@/api/request'
 import { tabbarPath } from '@/utils/api_white_list'
+import productData from '@/static/data/products.json'
 
 const router = useRouter()
+const route = useRoute()
 
 /**
  * 商品接口
@@ -129,17 +117,16 @@ const searchResults = ref<Product[]>([])
 const loadProductData = async (): Promise<void> => {
   try {
     // 模拟从静态文件加载数据
-    const response = await http.request({
-      url: '/static/data/products.json',
-      method: 'GET',
-    })
-    console.log(response)
+    // const response = await http.get('/static/data/products.json')
+    // console.log(response)
 
-    if (response.statusCode === 200) {
-      const data = response.data as ProductData
-      hotProducts.value = data.hotProducts
-      searchSuggestions.value = data.searchSuggestions
-    }
+    // if (response.statusCode === 200) {
+    //   const data = response.data as ProductData
+    //   hotProducts.value = data.hotProducts
+    //   searchSuggestions.value = data.searchSuggestions
+    // }
+    hotProducts.value = productData.hotProducts
+    searchSuggestions.value = productData.searchSuggestions
   } catch (error) {
     console.error('加载商品数据失败:', error)
     // 使用默认数据
@@ -193,14 +180,18 @@ const useDefaultData = (): void => {
  * 返回上一页
  */
 const handleBack = (): void => {
-  let page = getCurrentPages()
-  let backRoute = page[page.length - 2].route
-  if (tabbarPath.includes(`/${backRoute}`)) {
-    router.pushTab(`/${backRoute}`)
+  const redirect = decodeURIComponent(route.query.redirect)
+  if (redirect) {
+    if (tabbarPath.includes(`/${redirect}`)) {
+      router.pushTab(`/${redirect}`)
+    } else {
+      router.replace({
+        path: redirect,
+      })
+    }
   } else {
     uni.navigateBack()
   }
-  // router.back()
 }
 
 /**
@@ -361,6 +352,10 @@ onMounted(() => {
 
 .search-header {
   padding: 20rpx 0;
+  background-color: #fff;
+  // #ifdef MP-WEIXIN
+  padding-top: 160rpx;
+  // #endif
 
   .search-bar {
     display: flex;
@@ -404,7 +399,7 @@ onMounted(() => {
 }
 .search-section {
   margin: 0 20rpx;
-  padding: 20rpx;
+  padding: 20rpx 0;
   border-radius: 10rpx;
   background-color: #ffffff;
 
@@ -412,6 +407,11 @@ onMounted(() => {
   .suggestion-tags {
     display: flex;
     flex-wrap: wrap;
+
+    .tag {
+      margin: 0 12rpx 12rpx 0;
+      background-color: #fff;
+    }
   }
 }
 
