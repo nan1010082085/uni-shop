@@ -1,7 +1,6 @@
 import { createRouter } from '@gowiny/uni-router'
 import PGAE_DATA from '@/pages.json'
 import { onLoad, onShow } from '@dcloudio/uni-app'
-import { onMounted } from 'vue'
 
 const router = createRouter({
   pageData: PGAE_DATA,
@@ -29,7 +28,7 @@ export const useRoute = (): Route => {
   let route: any = {}
   let query: any = {}
 
-  // #ifdef APP-PLUS
+  // #ifndef APP-PLUS
   onLoad(options => {
     query = options
   })
@@ -37,7 +36,7 @@ export const useRoute = (): Route => {
   onShow(() => {
     let len = getCurrentPages().length
     let instance: any = getCurrentPages()?.[len - 1] ?? {}
-    // #ifdef APP-PLUS
+    // #ifndef APP-PLUS
     query = instance?.options ?? {}
     // #endif
     route.fullPath = instance.$page?.fullPath ?? ''
@@ -45,7 +44,6 @@ export const useRoute = (): Route => {
     route.path = instance.route ?? ''
     route.query = query
   })
-  console.log(route)
 
   return route as Route
 }

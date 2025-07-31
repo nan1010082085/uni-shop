@@ -15,8 +15,9 @@
 @import '@/uni_modules/uview-next/theme.scss';
 // windcss
 @import '@/styles/windcss.scss';
+// custom variables
+@import '@/styles/variable.scss';
 /* 颜色变量 */
-
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;
 $uni-color-success: #4cd964;

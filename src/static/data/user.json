@@ -1,0 +1,176 @@
+{
+  "userInfo": {
+    "id": 1,
+    "name": "张三",
+    "avatar": "https://picsum.photos/80/80?random=401",
+    "level": "普通会员",
+    "points": 1580,
+    "coupons": 3,
+    "collections": 12,
+    "reviews": 8
+  },
+  "menuItems": [
+    {
+      "id": 1,
+      "name": "优惠券",
+      "icon": "coupon",
+      "color": "#ff6b35",
+      "path": "/pages/coupon/index"
+    },
+    {
+      "id": 2,
+      "name": "我的积分",
+      "icon": "gift",
+      "color": "#4285f4",
+      "path": "/pages/points/index"
+    },
+    {
+      "id": 3,
+      "name": "我的收藏",
+      "icon": "star",
+      "color": "#34a853",
+      "path": "/pages/collection/index"
+    },
+    {
+      "id": 4,
+      "name": "客户反馈",
+      "icon": "chat",
+      "color": "#9c27b0",
+      "path": "/pages/feedback/index"
+    }
+  ],
+  "orderStatus": [
+    {
+      "id": 1,
+      "name": "待付款",
+      "icon": "clock",
+      "count": 2,
+      "path": "/pages/order/index?status=1"
+    },
+    {
+      "id": 2,
+      "name": "待发货",
+      "icon": "car",
+      "count": 1,
+      "path": "/pages/order/index?status=2"
+    },
+    {
+      "id": 3,
+      "name": "待收货",
+      "icon": "map",
+      "count": 0,
+      "path": "/pages/order/index?status=3"
+    },
+    {
+      "id": 4,
+      "name": "待评价",
+      "icon": "thumb-up",
+      "count": 1,
+      "path": "/pages/order/index?status=4"
+    },
+    {
+      "id": 5,
+      "name": "售后",
+      "icon": "reload",
+      "count": 0,
+      "path": "/pages/order/index?status=5"
+    }
+  ],
+  "serviceItems": [
+    {
+      "id": 1,
+      "name": "我的钱包",
+      "icon": "red-packet",
+      "color": "#ffc107",
+      "path": "/pages/wallet/index"
+    },
+    {
+      "id": 2,
+      "name": "我的足迹",
+      "icon": "heart",
+      "color": "#e91e63",
+      "path": "/pages/footprint/index"
+    },
+    {
+      "id": 3,
+      "name": "收货地址",
+      "icon": "map",
+      "color": "#2196f3",
+      "path": "/pages/address/index"
+    },
+    {
+      "id": 4,
+      "name": "设置",
+      "icon": "setting",
+      "color": "#4caf50",
+      "path": "/pages/setting/index"
+    }
+  ],
+  "discoverProducts": [
+    {
+      "id": 1,
+      "name": "小米14 Ultra",
+      "price": 5999,
+      "originalPrice": 6499,
+      "image": "https://picsum.photos/200/300?random=501",
+      "tag": "新品",
+      "sales": 1200
+    },
+    {
+      "id": 2,
+      "name": "MacBook Pro M3",
+      "price": 12999,
+      "image": "https://picsum.photos/200/250?random=502",
+      "tag": "热销",
+      "sales": 856
+    },
+    {
+      "id": 3,
+      "name": "AirPods Pro 2",
+      "price": 1899,
+      "originalPrice": 2199,
+      "image": "https://picsum.photos/200/280?random=503",
+      "sales": 2341
+    },
+    {
+      "id": 4,
+      "name": "小米手环8 Pro",
+      "price": 399,
+      "image": "https://picsum.photos/200/320?random=504",
+      "tag": "推荐",
+      "sales": 3456
+    },
+    {
+      "id": 5,
+      "name": "华为Mate60 Pro",
+      "price": 6999,
+      "image": "https://picsum.photos/200/290?random=505",
+      "tag": "5G",
+      "sales": 987
+    },
+    {
+      "id": 6,
+      "name": "iPad Air 5",
+      "price": 4399,
+      "originalPrice": 4799,
+      "image": "https://picsum.photos/200/260?random=506",
+      "sales": 654
+    },
+    {
+      "id": 7,
+      "name": "小米路由器AX6000",
+      "price": 599,
+      "image": "https://picsum.photos/200/240?random=507",
+      "tag": "WiFi6",
+      "sales": 2187
+    },
+    {
+      "id": 8,
+      "name": "戴森V15吸尘器",
+      "price": 3990,
+      "image": "https://picsum.photos/200/310?random=508",
+      "tag": "智能",
+      "sales": 432
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "orderTabs": [
+    { "id": "all", "name": "全部", "count": 0 },
+    { "id": "pending", "name": "待付款", "count": 1 },
+    { "id": "shipped", "name": "待发货", "count": 0 },
+    { "id": "receiving", "name": "待收货", "count": 1 },
+    { "id": "evaluate", "name": "待评价", "count": 0 }
+  ],
+  "orders": [
+    {
+      "id": "20250731001",
+      "status": "completed",
+      "statusText": "已完成",
+      "statusColor": "#ff6b35",
+      "createTime": "2025-07-31 10:30:00",
+      "totalAmount": 129.00,
+      "totalQuantity": 1,
+      "items": [
+        {
+          "id": "1",
+          "name": "2025夏季新款男士纯棉短袖T恤宽松休闲圆领印花上衣",
+          "image": "https://picsum.photos/200/200?random=21",
+          "color": "白色",
+          "size": "XL",
+          "price": 129.00,
+          "quantity": 1
+        }
+      ],
+      "actions": [
+        { "text": "查看物流", "type": "logistics" },
+        { "text": "评价", "type": "evaluate", "primary": true }
+      ]
+    },
+    {
+      "id": "20250730002",
+      "status": "pending",
+      "statusText": "待付款",
+      "statusColor": "#ff9500",
+      "createTime": "2025-07-30 15:20:00",
+      "totalAmount": 259.00,
+      "totalQuantity": 1,
+      "items": [
+        {
+          "id": "2",
+          "name": "2025夏季新款女士连衣裙时尚修身显瘦中长款碎花裙",
+          "image": "https://picsum.photos/200/200?random=22",
+          "color": "碎花",
+          "size": "M",
+          "price": 259.00,
+          "quantity": 1
+        }
+      ],
+      "actions": [
+        { "text": "取消订单", "type": "cancel" },
+        { "text": "立即付款", "type": "pay", "primary": true }
+      ]
+    },
+    {
+      "id": "20250729003",
+      "status": "receiving",
+      "statusText": "待收货",
+      "statusColor": "#007aff",
+      "createTime": "2025-07-29 09:15:00",
+      "totalAmount": 399.00,
+      "totalQuantity": 1,
+      "items": [
+        {
+          "id": "3",
+          "name": "2025新款男女休闲运动鞋轻便透气减震跑步鞋",
+          "image": "https://picsum.photos/200/200?random=23",
+          "color": "黑色",
+          "size": "42",
+          "price": 399.00,
+          "quantity": 1
+        }
+      ],
+      "actions": [
+        { "text": "查看物流", "type": "logistics" },
+        { "text": "确认收货", "type": "confirm", "primary": true }
+      ]
+    },
+    {
+      "id": "20250728004",
+      "status": "completed",
+      "statusText": "已完成",
+      "statusColor": "#ff6b35",
+      "createTime": "2025-07-28 14:45:00",
+      "totalAmount": 188.00,
+      "totalQuantity": 2,
+      "items": [
+        {
+          "id": "4",
+          "name": "时尚简约手机壳透明防摔保护套",
+          "image": "https://picsum.photos/200/200?random=24",
+          "color": "透明",
+          "size": "iPhone 14",
+          "price": 39.00,
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "无线蓝牙耳机降噪立体声音质",
+          "image": "https://picsum.photos/200/200?random=25",
+          "color": "白色",
+          "size": "标准版",
+          "price": 149.00,
+          "quantity": 1
+        }
+      ],
+      "actions": [
+        { "text": "查看物流", "type": "logistics" },
+        { "text": "再次购买", "type": "rebuy", "primary": true }
+      ]
+    },
+    {
+      "id": "20250727005",
+      "status": "shipped",
+      "statusText": "待发货",
+      "statusColor": "#10aeff",
+      "createTime": "2025-07-27 11:30:00",
+      "totalAmount": 89.00,
+      "totalQuantity": 1,
+      "items": [
+        {
+          "id": "6",
+          "name": "创意个性马克杯陶瓷咖啡杯办公室水杯",
+          "image": "https://picsum.photos/200/200?random=26",
+          "color": "白色",
+          "size": "350ml",
+          "price": 89.00,
+          "quantity": 1
+        }
+      ],
+      "actions": [
+        { "text": "查看详情", "type": "detail" },
+        { "text": "联系客服", "type": "service" }
+      ]
+    }
+  ]
+}

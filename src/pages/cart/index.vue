@@ -84,11 +84,11 @@
       </view>
 
       <!-- 猜你喜欢 -->
+      <view class="section-title">
+        <u-icon name="heart" color="#ff6b35" size="32"></u-icon>
+        <text class="title-text">猜你喜欢</text>
+      </view>
       <view v-if="recommendProducts.length > 0" class="recommend-section">
-        <view class="section-title">
-          <u-icon name="heart" color="#ff6b35" size="32"></u-icon>
-          <text class="title-text">猜你喜欢</text>
-        </view>
         <RecommendList :products="recommendProducts" />
       </view>
     </view>
@@ -396,7 +396,7 @@ onMounted(() => {
 }
 
 .edit-btn {
-  color: #ff6b35;
+  color: $shop-text-color;
   font-size: 28rpx;
 }
 
@@ -504,13 +504,13 @@ onMounted(() => {
 
       .price-symbol {
         font-size: 24rpx;
-        color: #ff6b35;
+        color: $shop-text-color;
         font-weight: 500;
       }
 
       .price-value {
         font-size: 32rpx;
-        color: #ff6b35;
+        color: $shop-text-color;
         font-weight: 600;
       }
 
@@ -524,25 +524,24 @@ onMounted(() => {
 }
 
 // 推荐商品样式
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32rpx 0 20rpx;
+
+  .title-text {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #333;
+    margin-left: 12rpx;
+  }
+}
 .recommend-section {
-  margin-top: 20rpx;
   background: #fff;
   border-radius: 16rpx;
   overflow: hidden;
 
-  .section-title {
-    display: flex;
-    align-items: center;
-    padding: 30rpx;
-    border-bottom: 1rpx solid #f0f0f0;
-
-    .title-text {
-      font-size: 32rpx;
-      font-weight: 600;
-      color: #333;
-      margin-left: 12rpx;
-    }
-  }
 }
 
 // 底部结算栏样式
@@ -581,13 +580,13 @@ onMounted(() => {
 
         .price-symbol {
           font-size: 24rpx;
-          color: #ff6b35;
+          color: $shop-text-color;
           font-weight: 500;
         }
 
         .price-value {
           font-size: 36rpx;
-          color: #ff6b35;
+          color: $shop-text-color;
           font-weight: 600;
         }
       }
@@ -595,7 +594,7 @@ onMounted(() => {
 
     .saved-amount {
       font-size: 24rpx;
-      color: #ff6b35;
+      color: $shop-text-color;
       margin-top: 4rpx;
     }
   }
