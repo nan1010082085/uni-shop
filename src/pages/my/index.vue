@@ -198,7 +198,13 @@ const handleOrderClick = (path: string, status: number) => {
  * @param path - 跳转路径
  */
 const handleServiceClick = (path: string) => {
-  router.push(path)
+  router.push({
+    path: path,
+    query: {
+      redirect: route.path,
+      id: userData.userInfo.id,
+    },
+  })
 }
 </script>
 

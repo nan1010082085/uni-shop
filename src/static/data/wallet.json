@@ -1,0 +1,83 @@
+{
+  "balance": 1580.50,
+  "bankCards": [
+    {
+      "id": 1,
+      "bankName": "中国工商银行",
+      "cardNumber": "**** **** **** 1234",
+      "cardType": "储蓄卡",
+      "isDefault": true,
+      "bindTime": "2024-01-10 10:00:00"
+    },
+    {
+      "id": 2,
+      "bankName": "招商银行",
+      "cardNumber": "**** **** **** 5678",
+      "cardType": "信用卡",
+      "isDefault": false,
+      "bindTime": "2024-01-12 15:30:00"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "type": "recharge",
+      "amount": 500.00,
+      "description": "银行卡充值",
+      "status": "success",
+      "time": "2024-01-15 14:30:00",
+      "orderId": "TXN202401151430001",
+      "payMethod": "工商银行(1234)"
+    },
+    {
+      "id": 2,
+      "type": "payment",
+      "amount": -299.00,
+      "description": "购买商品",
+      "status": "success",
+      "time": "2024-01-15 13:20:00",
+      "orderId": "ORD202401151320001",
+      "payMethod": "余额支付"
+    },
+    {
+      "id": 3,
+      "type": "refund",
+      "amount": 89.00,
+      "description": "订单退款",
+      "status": "success",
+      "time": "2024-01-14 16:45:00",
+      "orderId": "ORD202401141645001",
+      "payMethod": "原路退回"
+    },
+    {
+      "id": 4,
+      "type": "withdraw",
+      "amount": -200.00,
+      "description": "提现到银行卡",
+      "status": "processing",
+      "time": "2024-01-14 15:10:00",
+      "orderId": "WTH202401141510001",
+      "payMethod": "招商银行(5678)"
+    },
+    {
+      "id": 5,
+      "type": "recharge",
+      "amount": 1000.00,
+      "description": "银行卡充值",
+      "status": "success",
+      "time": "2024-01-13 10:30:00",
+      "orderId": "TXN202401131030001",
+      "payMethod": "工商银行(1234)"
+    },
+    {
+      "id": 6,
+      "type": "payment",
+      "amount": -199.50,
+      "description": "购买商品",
+      "status": "success",
+      "time": "2024-01-12 19:20:00",
+      "orderId": "ORD202401121920001",
+      "payMethod": "余额支付"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ export interface Product {
   image: string
   description?: string
   tag?: string
+  viewTime?: string // 浏览时间，用于足迹功能
 }
 
 /**

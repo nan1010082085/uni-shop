@@ -1,5 +1,5 @@
 <template>
-  <div class="index-wrap">登陆</div>
+  <view class="index-wrap">登陆</view>
 </template>
 <script setup lang="ts">
 </script>

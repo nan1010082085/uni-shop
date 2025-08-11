@@ -86,28 +86,28 @@
       "name": "我的钱包",
       "icon": "red-packet",
       "color": "#ffc107",
-      "path": "/pages/wallet/index"
+      "path": "/pages/profile/wallet"
     },
     {
       "id": 2,
       "name": "我的足迹",
       "icon": "heart",
       "color": "#e91e63",
-      "path": "/pages/footprint/index"
+      "path": "/pages/profile/footprint"
     },
     {
       "id": 3,
       "name": "收货地址",
       "icon": "map",
       "color": "#2196f3",
-      "path": "/pages/address/index"
+      "path": "/pages/profile/address"
     },
     {
       "id": 4,
       "name": "设置",
       "icon": "setting",
       "color": "#4caf50",
-      "path": "/pages/setting/index"
+      "path": "/pages/profile/setting"
     }
   ],
   "discoverProducts": [

@@ -1,0 +1,105 @@
+{
+  "totalPoints": 2580,
+  "pointsHistory": [
+    {
+      "id": 1,
+      "type": "earn",
+      "source": "购物消费",
+      "points": 50,
+      "description": "购买商品获得积分",
+      "time": "2024-01-15 14:30:00",
+      "orderId": "202401151430001"
+    },
+    {
+      "id": 2,
+      "type": "earn",
+      "source": "签到奖励",
+      "points": 10,
+      "description": "每日签到获得积分",
+      "time": "2024-01-15 08:00:00",
+      "orderId": null
+    },
+    {
+      "id": 3,
+      "type": "spend",
+      "source": "积分兑换",
+      "points": -100,
+      "description": "兑换优惠券",
+      "time": "2024-01-14 16:20:00",
+      "orderId": "202401141620001"
+    },
+    {
+      "id": 4,
+      "type": "earn",
+      "source": "评价奖励",
+      "points": 20,
+      "description": "商品评价获得积分",
+      "time": "2024-01-14 15:10:00",
+      "orderId": "202401141510001"
+    },
+    {
+      "id": 5,
+      "type": "earn",
+      "source": "分享奖励",
+      "points": 15,
+      "description": "分享商品获得积分",
+      "time": "2024-01-14 12:30:00",
+      "orderId": null
+    },
+    {
+      "id": 6,
+      "type": "spend",
+      "source": "积分抵扣",
+      "points": -50,
+      "description": "购物积分抵扣",
+      "time": "2024-01-13 19:45:00",
+      "orderId": "202401131945001"
+    },
+    {
+      "id": 7,
+      "type": "earn",
+      "source": "新用户奖励",
+      "points": 100,
+      "description": "注册成功获得积分",
+      "time": "2024-01-10 10:00:00",
+      "orderId": null
+    }
+  ],
+  "pointsRules": [
+    {
+      "title": "购物消费",
+      "description": "每消费1元获得1积分",
+      "icon": "shopping-cart"
+    },
+    {
+      "title": "每日签到",
+      "description": "每日签到获得10积分，连续签到有额外奖励",
+      "icon": "calendar"
+    },
+    {
+      "title": "商品评价",
+      "description": "完成商品评价获得20积分",
+      "icon": "star"
+    },
+    {
+      "title": "分享商品",
+      "description": "分享商品到社交平台获得15积分",
+      "icon": "share"
+    },
+    {
+      "title": "邀请好友",
+      "description": "成功邀请好友注册获得50积分",
+      "icon": "user-plus"
+    },
+    {
+      "title": "积分兑换",
+      "description": "积分可兑换优惠券、商品等",
+      "icon": "gift"
+    },
+    {
+      "title": "积分抵扣",
+      "description": "购物时可使用积分抵扣现金，100积分=1元",
+      "icon": "money"
+    }
+  ]
+}

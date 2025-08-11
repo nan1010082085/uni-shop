@@ -8,6 +8,7 @@
     },
     "lib": ["esnext", "dom"],
     "types": ["@dcloudio/types"],
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
   },
@@ -18,5 +19,9 @@
     "src/**/*.vue",
     "src/**/*.json",
     "src/types/**/*.d.ts"
+  ],
+  "exclude": [
+    "src/uni_modules/**/*",
+    "node_modules"
   ]
 }

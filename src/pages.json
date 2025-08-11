@@ -98,10 +98,32 @@
         "navigationStyle": "custom"
       }
     },
+    // 个人中心-服务
     {
       "path": "pages/profile/address",
       "style": {
         "navigationBarTitleText": "地址管理",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/setting",
+      "style": {
+        "navigationBarTitleText": "设置",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/footprint",
+      "style": {
+        "navigationBarTitleText": "我的足迹",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/profile/wallet",
+      "style": {
+        "navigationBarTitleText": "我的钱包",
         "navigationStyle": "custom"
       }
     }

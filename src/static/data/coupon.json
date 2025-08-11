@@ -1,0 +1,103 @@
+{
+  "unused": [
+    {
+      "id": 1,
+      "name": "新用户专享券",
+      "type": "discount",
+      "value": 50,
+      "minAmount": 0,
+      "description": "新用户专享50元无门槛优惠券",
+      "validFrom": "2024-01-15 00:00:00",
+      "validTo": "2024-01-22 23:59:59",
+      "status": "unused",
+      "scope": "全场通用",
+      "getTime": "2024-01-15 12:00:00"
+    },
+    {
+      "id": 2,
+      "name": "满减优惠券",
+      "type": "discount",
+      "value": 30,
+      "minAmount": 200,
+      "description": "满200元减30元",
+      "validFrom": "2024-01-10 00:00:00",
+      "validTo": "2024-01-25 23:59:59",
+      "status": "unused",
+      "scope": "服装类商品",
+      "getTime": "2024-01-10 14:30:00"
+    },
+    {
+      "id": 3,
+      "name": "运费券",
+      "type": "shipping",
+      "value": 15,
+      "minAmount": 99,
+      "description": "满99元免运费",
+      "validFrom": "2024-01-12 00:00:00",
+      "validTo": "2024-02-12 23:59:59",
+      "status": "unused",
+      "scope": "全场通用",
+      "getTime": "2024-01-12 16:20:00"
+    }
+  ],
+  "used": [
+    {
+      "id": 4,
+      "name": "品类优惠券",
+      "type": "discount",
+      "value": 20,
+      "minAmount": 100,
+      "description": "满100元减20元",
+      "validFrom": "2024-01-01 00:00:00",
+      "validTo": "2024-01-31 23:59:59",
+      "status": "used",
+      "scope": "数码产品",
+      "getTime": "2024-01-05 10:00:00",
+      "useTime": "2024-01-14 15:30:00",
+      "orderId": "ORD202401141530001"
+    },
+    {
+      "id": 5,
+      "name": "积分兑换券",
+      "type": "discount",
+      "value": 10,
+      "minAmount": 50,
+      "description": "满50元减10元",
+      "validFrom": "2024-01-08 00:00:00",
+      "validTo": "2024-01-18 23:59:59",
+      "status": "used",
+      "scope": "全场通用",
+      "getTime": "2024-01-08 12:00:00",
+      "useTime": "2024-01-13 19:45:00",
+      "orderId": "ORD202401131945001"
+    }
+  ],
+  "expired": [
+    {
+      "id": 6,
+      "name": "元旦特惠券",
+      "type": "discount",
+      "value": 100,
+      "minAmount": 500,
+      "description": "满500元减100元",
+      "validFrom": "2024-01-01 00:00:00",
+      "validTo": "2024-01-07 23:59:59",
+      "status": "expired",
+      "scope": "全场通用",
+      "getTime": "2024-01-01 08:00:00"
+    },
+    {
+      "id": 7,
+      "name": "周末特价券",
+      "type": "discount",
+      "value": 25,
+      "minAmount": 150,
+      "description": "满150元减25元",
+      "validFrom": "2024-01-06 00:00:00",
+      "validTo": "2024-01-07 23:59:59",
+      "status": "expired",
+      "scope": "家居用品",
+      "getTime": "2024-01-06 09:30:00"
+    }
+  ]
+}

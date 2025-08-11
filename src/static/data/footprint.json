@@ -1,0 +1,104 @@
+{
+  "footprintProducts": [
+    {
+      "id": 1001,
+      "name": "时尚休闲运动鞋",
+      "price": 299,
+      "originalPrice": 399,
+      "image": "https://picsum.photos/300/400?random=1001",
+      "description": "舒适透气，适合日常穿搭",
+      "tag": "热销",
+      "viewTime": "2024-01-15 14:30:00"
+    },
+    {
+      "id": 1002,
+      "name": "简约百搭T恤",
+      "price": 89,
+      "originalPrice": 129,
+      "image": "https://picsum.photos/300/400?random=1002",
+      "description": "纯棉面料，柔软亲肤",
+      "tag": "新品",
+      "viewTime": "2024-01-15 13:45:00"
+    },
+    {
+      "id": 1003,
+      "name": "商务休闲裤",
+      "price": 199,
+      "originalPrice": 259,
+      "image": "https://picsum.photos/300/400?random=1003",
+      "description": "修身版型，商务休闲两相宜",
+      "tag": "推荐",
+      "viewTime": "2024-01-15 12:20:00"
+    },
+    {
+      "id": 1004,
+      "name": "时尚女士包包",
+      "price": 159,
+      "originalPrice": 199,
+      "image": "https://picsum.photos/300/400?random=1004",
+      "description": "精致工艺，多隔层设计",
+      "tag": "限时特价",
+      "viewTime": "2024-01-15 11:10:00"
+    },
+    {
+      "id": 1005,
+      "name": "智能手表",
+      "price": 899,
+      "originalPrice": 1299,
+      "image": "https://picsum.photos/300/400?random=1005",
+      "description": "健康监测，智能提醒",
+      "tag": "科技",
+      "viewTime": "2024-01-15 10:30:00"
+    },
+    {
+      "id": 1006,
+      "name": "无线蓝牙耳机",
+      "price": 299,
+      "originalPrice": 399,
+      "image": "https://picsum.photos/300/400?random=1006",
+      "description": "降噪技术，音质清晰",
+      "tag": "热门",
+      "viewTime": "2024-01-14 16:45:00"
+    },
+    {
+      "id": 1007,
+      "name": "护肤精华液",
+      "price": 199,
+      "originalPrice": 299,
+      "image": "https://picsum.photos/300/400?random=1007",
+      "description": "深层滋养，改善肌肤",
+      "tag": "美妆",
+      "viewTime": "2024-01-14 15:20:00"
+    },
+    {
+      "id": 1008,
+      "name": "家用咖啡机",
+      "price": 599,
+      "originalPrice": 799,
+      "image": "https://picsum.photos/300/400?random=1008",
+      "description": "一键制作，香浓咖啡",
+      "tag": "家电",
+      "viewTime": "2024-01-14 14:15:00"
+    },
+    {
+      "id": 1009,
+      "name": "运动健身套装",
+      "price": 159,
+      "originalPrice": 219,
+      "image": "https://picsum.photos/300/400?random=1009",
+      "description": "弹性面料，运动自如",
+      "tag": "运动",
+      "viewTime": "2024-01-14 13:30:00"
+    },
+    {
+      "id": 1010,
+      "name": "创意台灯",
+      "price": 129,
+      "originalPrice": 169,
+      "image": "https://picsum.photos/300/400?random=1010",
+      "description": "护眼光源，简约设计",
+      "tag": "家居",
+      "viewTime": "2024-01-14 12:00:00"
+    }
+  ]
+}

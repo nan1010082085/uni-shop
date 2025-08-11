@@ -2,7 +2,7 @@
 <template>
   <waterfall v-model="waterfallData" ref="uWaterfall" :column="2">
     <template #default="{ columnList, columnIndex }">
-      <view class="demo-warter" v-for="(item, index) in columnList" :key="index" @click="handleProductClick">
+      <view class="demo-warter" v-for="(item, index) in columnList" :key="index" @click="() => handleProductClick(item)">
         <u-lazy-load threshold="-200" border-radius="10" :image="item.image" :index="index"></u-lazy-load>
         <view class="demo-title">{{ item.name }}</view>
         <view class="demo-desc">{{ item.description }}</view>
@@ -46,6 +46,11 @@ interface WaterfallProps {
 
 const props = defineProps<WaterfallProps>()
 
+// 定义emit事件
+const emit = defineEmits<{
+  productClick: [product: Product]
+}>()
+
 const router = useRouter()
 const route = useRoute()
 
@@ -53,17 +58,14 @@ const route = useRoute()
 const waterfallData = ref<Product[]>([])
 const uWaterfall = ref()
 
-// 处理商品点击
-const handleProductClick = (product: any) => {
-  console.log('点击商品:', product as Product)
-  // 这里可以添加跳转到商品详情页的逻辑
-  router.push({
-    path: `/pages/commodity_details/index`,
-    query: {
-      redirect: route.path,
-      id: product.id,
-    }
-  })
+/**
+ * 处理商品点击事件
+ * @param product 商品信息
+ */
+const handleProductClick = (product: Product) => {
+  console.log('点击商品:', product)
+  // 触发父组件的商品点击事件
+  emit('productClick', product)
 }
 
 // 监听props变化，更新瀑布流数据
