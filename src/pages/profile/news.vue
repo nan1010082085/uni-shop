@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="我的消息" />
-  <view class="news-container">
+  <view class="news-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 消息统计 -->
     <view class="message-stats" v-if="unreadCount > 0">
       <text class="stats-text">您有 {{ unreadCount }} 条未读消息</text>
@@ -76,6 +76,7 @@
 import { ref, computed, onMounted } from 'vue'
 import NavBar from '@/components/NavBar/index.vue'
 import newsData from '@/static/data/news.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 消息数据接口
@@ -94,6 +95,7 @@ interface Message {
   points?: number
 }
 
+const pageTop = useSysTopBottom()
 /**
  * 消息列表
  */
@@ -313,7 +315,7 @@ onMounted(() => {
   background-color: #f5f5f5;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

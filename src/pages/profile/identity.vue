@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="身份认证" />
-  <view class="identity-container">
+  <view class="identity-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <scroll-view scroll-y class="scroll-container">
       <!-- 认证状态提示 -->
       <view class="status-section">
@@ -149,6 +149,7 @@
 </template>
 <script setup lang="ts">
 import NavBar from '@/components/NavBar/index.vue'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 import { ref, reactive, computed, onMounted } from 'vue'
 
 /**
@@ -169,6 +170,7 @@ interface IdentityInfo {
   verifyTime?: string
 }
 
+const pageTop = useSysTopBottom()
 /**
  * 身份信息
  */

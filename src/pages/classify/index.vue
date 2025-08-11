@@ -1,7 +1,9 @@
 <template>
-  <view class="classify-wrap">
+  <view class="classify-wrap" :style="{ paddingTop: viewTopBottom.top + 'px' }">
     <!-- 搜索栏 -->
-    <search-bar class="classify-search" disabled @click="handleSearchClick" @search="handleSearch" @scan="handleScan" />
+    <view class="classify-search" :style="{ paddingTop: viewTopBottom.top + 'px' }">
+      <search-bar class="search-bar" disabled @click="handleSearchClick" @search="handleSearch" @scan="handleScan" />
+    </view>
 
     <!-- 分类内容 -->
     <view class="classify-content">
@@ -69,10 +71,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, nextTick, onMounted } from 'vue'
+import { ref, reactive, nextTick, onMounted, computed } from 'vue'
 import TabBar from '@/components/TabBar/index.vue'
 import SearchBar from '@/components/SearchBar/index.vue'
 import classifyData from '@/static/data/classify.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 商品接口
@@ -94,6 +97,15 @@ interface Category {
   name: string
   products: Product[]
 }
+
+const viewTopBottom = computed(() => {
+  let _props = { top: 44, bottom: 50 }
+  // #ifdef H5
+  _props = { top: 0, bottom: 0 }
+  // #endif
+  // 获取系统顶部状态栏高度
+  return useSysTopBottom(_props)
+})
 
 // 当前选中的分类索引
 const activeIndex = ref(0)
@@ -218,19 +230,31 @@ onMounted(() => {
 .classify-wrap {
   height: 100vh;
   margin: 0 auto;
-  background-color: #f5f5f5;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  // #ifdef MP-WEIXIN
+  padding-top: 60px;
+  // #endif
   display: flex;
   flex-direction: column;
-  position: relative;
-  // #ifdef MP-WEIXIN
-  padding-top: 108rpx;
-  // #endif
 }
 
 .classify-search {
-  padding: 20rpx;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 750rpx;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  // #ifdef MP-WEIXIN
+  padding-top: 110rpx;
+  // #endif
   // #ifdef APP-PLUS
-  padding-top: 40rpx !important;
+  margin-top: 110rpx;
   // #endif
 }
 
@@ -238,9 +262,9 @@ onMounted(() => {
   flex: 1;
   display: flex;
   overflow: hidden;
-  padding-top: 110rpx; /* 为固定搜索栏留出空间 */
-    // #ifdef APP-PLUS
-  padding-top: 130rpx;
+  padding-top: 44px;
+  // #ifdef APP-PLUS
+  padding-top: 44px;
   // #endif
 }
 
@@ -248,6 +272,7 @@ onMounted(() => {
   width: 180rpx;
   background-color: #fff;
   border-right: 2rpx solid #e4e7ed;
+  overflow: hidden;
 
   .category-item {
     height: 100rpx;
@@ -360,18 +385,5 @@ onMounted(() => {
       }
     }
   }
-}
-
-/* 固定搜索栏样式 */
-:deep(.search-bar) {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 750rpx;
-  z-index: 999;
-  background-color: #fff;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
 }
 </style>

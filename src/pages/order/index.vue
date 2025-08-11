@@ -1,8 +1,8 @@
 <template>
   <nav-bar title="订单列表" hideLeft />
-  <view class="order-page">
+  <view class="order-page" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 订单状态标签栏 -->
-    <view class="order-tabs">
+    <view class="order-tabs" :style="{ top: pageTop.top + 'px' }">
       <u-grid :col="5" class="order-grid">
         <u-grid-item v-for="(item, index) in orderTabs" @click="handleTabChange(index)">
           <view class="tab-item">
@@ -111,9 +111,11 @@ import type { OrderData, Order, OrderAction } from '@/types/data.d'
 import { uToast } from '@/utils'
 import { onLoad } from '@dcloudio/uni-app'
 import OrdersData from '@/static/data/orders.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 const router = useRouter()
 const route = useRoute()
+const pageTop = useSysTopBottom()
 // const instance = getCurrentInstance()
 // 响应式数据
 const orderData = ref<OrderData>({ orderTabs: [], orders: [] })
@@ -122,7 +124,7 @@ const loading = ref<boolean>(false)
 const orderTabs = computed(() => orderData.value.orderTabs || [])
 const tranformX = computed(() => {
   let index = currentTab.value
-  return `calc(30rpx + ((100vw - 60rpx) / 5) * ${index})`
+  return `calc(30rpx + (20vw) * ${index})`
 })
 const badgeOffset = computed(() => {
   let offset = ['12rpx', '-22rpx']
@@ -399,12 +401,18 @@ onMounted(init)
   background-color: #f5f5f5;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 
 .order-tabs {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 750rpx;
+  z-index: 999;
   background-color: #fff;
   padding: 0 30rpx;
   height: 88rpx;
@@ -431,7 +439,7 @@ onMounted(init)
     position: absolute;
     bottom: 0;
     left: 30rpx;
-    width: calc((100vw - 60rpx) / 5);
+    width: 20vw;
     height: 1rpx;
     background-color: $shop-text-color;
     transition: left 0.3s ease;

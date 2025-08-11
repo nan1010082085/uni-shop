@@ -117,9 +117,9 @@ const handleScan = (): void => {
 
 <style lang="scss" scoped>
 .search-bar {
-  // #ifdef MP-WEIXIN
-  padding-top: 160rpx;
-  padding-bottom: 20rpx;
-  // #endif
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 44px;
 }
 </style>

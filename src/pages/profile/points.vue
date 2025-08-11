@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="我的积分" />
-  <view class="points-container">
+  <view class="points-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 积分总览 -->
     <view class="points-header">
       <view class="points-total">
@@ -79,6 +79,7 @@
 import { ref, computed, onMounted } from 'vue'
 import NavBar from '@/components/NavBar/index.vue'
 import pointsData from '@/static/data/points.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 积分数据接口
@@ -98,6 +99,8 @@ interface PointsRule {
   description: string
   icon: string
 }
+
+const pageTop = useSysTopBottom()
 
 /**
  * 总积分
@@ -214,7 +217,7 @@ onMounted(() => {
   background-color: #f5f5f5;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

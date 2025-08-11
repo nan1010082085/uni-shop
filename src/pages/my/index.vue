@@ -1,7 +1,7 @@
 <template>
   <view class="my-page">
     <!-- 用户信息区域 -->
-    <view class="user-section">
+    <view class="user-section" :style="{ paddingTop: viewTopBottom.top + 'px' }">
       <view class="user-info">
         <u-avatar :src="userData.userInfo.avatar" size="80" shape="circle" />
         <view class="user-details">
@@ -85,7 +85,7 @@
       <text class="section-title">发现好物</text>
     </view>
     <view class="discover-section">
-      <RecommendList :products="discoverList" />
+      <RecommendList :products="discoverList" @click="handleProductClick" />
     </view>
   </view>
 
@@ -93,16 +93,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from '@/router'
 import TabBar from '@/components/TabBar/index.vue'
 import RecommendList from '@/components/RecommendList/index.vue'
 import http from '@/api/request'
-import type { UserData, DiscoverProduct } from '@/types/data'
+import type { UserData, DiscoverProduct, Product } from '@/types/data'
 import userData from '@/static/data/user.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 const router = useRouter()
 const route = useRoute()
+const viewTopBottom = useSysTopBottom( { top: 50, bottom: 50 })
 const discoverList = ref<DiscoverProduct[]>([])
 
 /**
@@ -206,20 +208,27 @@ const handleServiceClick = (path: string) => {
     },
   })
 }
+
+const handleProductClick = (product: Product) => {
+  console.log('点击商品:', product)
+  router.push({
+    path: '/pages/commodity_details/index',
+    query: { id: product.id },
+  })
+}
 </script>
 
 <style lang="scss" scoped>
 .my-page {
   background-color: #f5f5f5;
   min-height: 100vh;
-  padding-bottom: 100rpx;
 }
 
 .user-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 40rpx 30rpx 30rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 160rpx;
+  padding-top: 122rpx;
   // #endif
   color: white;
 

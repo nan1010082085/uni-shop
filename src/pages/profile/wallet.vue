@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="我的钱包" />
-  <view class="wallet-container">
+  <view class="wallet-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 余额卡片 -->
     <view class="balance-card">
       <view class="balance-header">
@@ -167,6 +167,7 @@
 import { ref, computed, onMounted } from 'vue'
 import NavBar from '@/components/NavBar/index.vue'
 import walletsData from '@/static/data/wallet.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 银行卡接口
@@ -199,6 +200,8 @@ interface WalletData {
   bankCards: BankCard[]
   transactions: Transaction[]
 }
+
+const pageTop = useSysTopBottom()
 
 /**
  * 钱包数据
@@ -423,7 +426,7 @@ onMounted(() => {
   background-color: #f5f5f5;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

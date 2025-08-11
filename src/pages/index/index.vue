@@ -1,9 +1,10 @@
 <template>
   <nav-bar title="由物商城" />
-  <view class="index-page">
+  <view class="index-page" :style="{ paddingTop: viewTopBottom.top + 'px' }">
     <!-- 搜索栏 -->
     <view class="search-section">
       <search-bar
+        class="search-bar"
         placeholder="搜索商品"
         :show-action="false"
         shape="round"
@@ -52,16 +53,13 @@
     </view>
     <view class="hot-section">
       <u-grid :col="2">
-        <u-grid-item
-          v-for="(item, index) in hotProducts"
-          :key="index"
-          class="hot-product-item"
-          @click="handleProductClick(item)"
-        >
-          <image class="product-image" :src="item.image" mode="widthFix" />
-          <view class="product-info">
-            <text class="product-name">{{ item.name }}</text>
-            <text class="product-price">¥{{ item.price }}</text>
+        <u-grid-item v-for="(item, index) in hotProducts" :key="index" @click="handleProductClick(item)">
+          <view class="hot-product-item">
+            <image class="product-image" :src="item.image" mode="widthFix" />
+            <view class="product-info">
+              <text class="product-name">{{ item.name }}</text>
+              <text class="product-price">¥{{ item.price }}</text>
+            </view>
           </view>
         </u-grid-item>
       </u-grid>
@@ -86,6 +84,8 @@ import RecommendList from '@/components/RecommendList/index.vue'
 import SearchBar from '@/components/SearchBar/index.vue'
 import { ref, onMounted } from 'vue'
 import homeData from '@/static/data/home.json'
+import { useRouter } from '@/router'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 // 定义商品接口
 interface Product {
@@ -104,6 +104,9 @@ interface Category {
   name: string
   icon: string
 }
+
+const router = useRouter()
+const viewTopBottom = useSysTopBottom()
 
 // 从JSON文件加载数据
 const bannerList = ref(homeData.bannerList)
@@ -137,8 +140,8 @@ const generateRecommendProducts = (): void => {
 
 // 事件处理函数
 const handleSearchClick = () => {
-  uni.navigateTo({
-    url: '/pages/search/index',
+  router.push({
+    path: '/pages/search/index',
   })
 }
 
@@ -149,8 +152,9 @@ const handleBannerClick = (index: number) => {
 const handleCategoryClick = (category: Category) => {
   console.log('点击分类:', category)
   // 跳转到分类页面
-  uni.navigateTo({
-    url: `/pages/category/index?id=${category.id}`,
+  router.pushTab({
+    path: '/pages/classify/index',
+    query: { id: category.id },
   })
 }
 
@@ -160,15 +164,13 @@ const handleActivityClick = () => {
 
 const handleMoreClick = () => {
   console.log('点击更多')
-  uni.navigateTo({
-    url: '/pages/product/list',
-  })
 }
 
 const handleProductClick = (product: Product) => {
   console.log('点击商品:', product)
-  uni.navigateTo({
-    url: `/pages/product/detail?id=${product.id}`,
+  router.push({
+    path: '/pages/commodity_details/index',
+    query: { id: product.id },
   })
 }
 
@@ -182,14 +184,10 @@ onMounted(() => {
   background-color: #f5f5f5;
   min-height: 100vh;
   padding-top: 88rpx;
-  // #ifdef MP-WEIXIN
-  padding-top: 0rpx;
-  // #endif
 }
 
 .search-section {
-  padding-top: 20rpx;
-  padding-bottom: 10rpx;
+  margin: 20rpx 0;
   // #ifdef MP-WEIXIN
   padding-bottom: 0rpx;
   // #endif
@@ -272,7 +270,8 @@ onMounted(() => {
 }
 
 .hot-product-item {
-  background-color: #f8f8f8;
+  width: 100%;
+  background-color: #fff;
   border-radius: 12rpx;
   padding: 20rpx;
   margin-bottom: 20rpx;
@@ -286,6 +285,7 @@ onMounted(() => {
 }
 
 .product-info {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }

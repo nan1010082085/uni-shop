@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="编辑资料" />
-  <view class="edit-container">
+  <view class="edit-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <scroll-view scroll-y class="scroll-container">
       <!-- 头像设置 -->
       <view class="avatar-section">
@@ -127,10 +127,12 @@
 </template>
 <script setup lang="ts">
 import NavBar from '@/components/NavBar/index.vue'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 import { useRoute } from '@/router'
 import { ref, reactive, onMounted } from 'vue'
 
 const route = useRoute()
+const pageTop = useSysTopBottom()
 
 /**
  * 用户信息接口
@@ -403,7 +405,7 @@ onMounted(init)
   padding-bottom: 20rpx;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

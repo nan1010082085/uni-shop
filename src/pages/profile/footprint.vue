@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="我的足迹" />
-  <view class="footprint-wrap">
+  <view class="footprint-wrap" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 足迹统计信息 -->
     <view class="footprint-stats">
       <view class="stats-item">
@@ -37,6 +37,7 @@ import RecommendList from '@/components/RecommendList/index.vue'
 import { type Product } from '@/types/data.d'
 import footprintData from '@/static/data/footprint.json'
 import { useRouter } from '@/router'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 足迹页面组件
@@ -44,6 +45,7 @@ import { useRouter } from '@/router'
  */
 
 const router = useRouter()
+const pageTop = useSysTopBottom()
 
 // 足迹商品数据
 const footprintProducts = ref<Product[]>([])
@@ -130,7 +132,7 @@ onMounted(() => {
   padding: 0 20rpx 20rpx;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

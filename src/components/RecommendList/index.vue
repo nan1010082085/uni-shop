@@ -107,10 +107,9 @@ onReachBottom(() => {
 }
 
 .demo-warter {
-  border-radius: 8px;
-  margin: 5px;
+  border-radius: 16rpx;
+  margin: 10rpx;
   background-color: #ffffff;
-  padding: 8px;
   position: relative;
 }
 
@@ -122,12 +121,12 @@ onReachBottom(() => {
 
 .demo-image {
   width: 100%;
-  border-radius: 4px;
+  border-radius: 8rpx;
 }
 
 .demo-title {
   font-size: 28rpx;
-  margin-top: 5px;
+  margin-top: 10rpx;
   color: $u-main-color;
 }
 
@@ -139,7 +138,7 @@ onReachBottom(() => {
 
 .demo-tag {
   display: flex;
-  margin-top: 5px;
+  margin-top: 10rpx;
 }
 
 .demo-tag-owner {

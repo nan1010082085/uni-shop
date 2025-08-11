@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="地址管理" />
-  <view class="address-container">
+  <view class="address-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 地址列表 -->
     <view class="address-list" v-if="addressList.length > 0">
       <view class="address-item" v-for="item in addressList" :key="item.id" @click="handleAddressClick(item)">
@@ -129,6 +129,7 @@
 import { ref, onMounted } from 'vue'
 import NavBar from '@/components/NavBar/index.vue'
 import addressData from '@/static/data/address.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 地址数据接口
@@ -147,6 +148,8 @@ interface Address {
   createTime?: string
   updateTime?: string
 }
+
+const pageTop = useSysTopBottom()
 
 /**
  * 地址列表
@@ -377,7 +380,7 @@ onMounted(() => {
   padding-bottom: 160rpx;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

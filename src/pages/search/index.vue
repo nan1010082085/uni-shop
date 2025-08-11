@@ -1,7 +1,7 @@
 <template>
   <view class="search-page">
     <!-- 搜索头部 -->
-    <view class="search-header">
+    <view class="search-header" :style="{ paddingTop: viewTopBottom.top + 'px' }">
       <view class="search-bar">
         <u-icon name="arrow-left" size="20" color="#303133" @click="handleBack" />
         <view class="search-input-wrapper">
@@ -78,6 +78,7 @@ import { useRoute, useRouter } from '@/router'
 // import http from '@/api/request'
 import { tabbarPath } from '@/utils/api_white_list'
 import productData from '@/static/data/products.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 const router = useRouter()
 const route = useRoute()
@@ -102,6 +103,8 @@ interface ProductData {
   hotProducts: Product[]
   searchSuggestions: string[]
 }
+
+const viewTopBottom = useSysTopBottom()
 
 // 搜索相关状态
 const searchValue = ref<string>('')
@@ -354,7 +357,7 @@ onMounted(() => {
   padding: 20rpx 0;
   background-color: #fff;
   // #ifdef MP-WEIXIN
-  padding-top: 160rpx;
+  padding-top: 110rpx;
   // #endif
   // #ifdef APP-PLUS
   padding-top: 40rpx;

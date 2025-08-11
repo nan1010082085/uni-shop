@@ -1,7 +1,7 @@
 <template>
   <nav-bar title="商品详情" :hideLeft="false"></nav-bar>
 
-  <view class="product-detail">
+  <view class="product-detail" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 商品轮播图 -->
     <view class="product-images">
       <swiper
@@ -114,6 +114,9 @@ import { ref, computed, onMounted } from 'vue'
 import NavBar from '@/components/NavBar/index.vue'
 import type { ProductDetail } from '@/types/data'
 import productDetailData from '@/static/data/product-detail.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
+
+const pageTop = useSysTopBottom()
 
 /**
  * 当前轮播图索引

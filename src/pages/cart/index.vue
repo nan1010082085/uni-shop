@@ -1,12 +1,14 @@
 <template>
   <nav-bar title="购物车">
+    <!-- #ifndef MP-WEIXIN -->
     <template #right>
       <text class="edit-btn" @click="toggleEditMode">
         {{ isEditMode ? '完成' : '编辑' }}
       </text>
     </template>
+    <!-- #endif -->
   </nav-bar>
-  <view class="cart-page">
+  <view class="cart-page" :style="{ paddingTop: viewTopBottom.top + 'px' }">
     <view class="cart-content">
       <!-- 购物车为空 -->
       <view v-if="cartItems.length === 0" class="empty-cart">
@@ -94,7 +96,7 @@
     </view>
 
     <!-- 底部结算栏 -->
-    <view v-if="cartItems.length > 0" class="cart-footer">
+    <view v-if="cartItems.length > 0" class="cart-footer" :style="{ bottom: viewTopBottom.bottom + 'px' }">
       <view class="footer-left">
         <u-checkbox v-model="selectAll" @change="handleSelectAll" active-color="#ff6b35"> 全选 </u-checkbox>
       </view>
@@ -132,6 +134,8 @@ import RecommendList from '@/components/RecommendList/index.vue'
 import http from '@/api/request'
 import { uToast } from '@/utils'
 import CartData from '@/static/data/cart.json'
+import { onReady } from '@dcloudio/uni-app'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 购物车商品接口
@@ -169,6 +173,8 @@ interface CartData {
   cartItems: CartItem[]
   recommendProducts: RecommendProduct[]
 }
+
+const viewTopBottom = useSysTopBottom()
 
 // 响应式数据
 const cartItems = ref<CartItem[]>([])
@@ -396,6 +402,13 @@ onMounted(() => {
   background-color: #f5f5f5;
   padding-top: 88rpx;
   padding-bottom: 130rpx;
+  // #ifdef MP-WEIXIN
+  padding-top: 110rpx;
+  padding-bottom: 44rpx;
+  // #endif
+  // #ifdef APP-PLUS
+  padding-top: 110rpx;
+  // #endif
 }
 
 .edit-btn {
@@ -540,6 +553,7 @@ onMounted(() => {
     margin-left: 12rpx;
   }
 }
+
 .recommend-section {
   background: #fff;
   border-radius: 16rpx;
@@ -549,7 +563,8 @@ onMounted(() => {
 // 底部结算栏样式
 .cart-footer {
   position: fixed;
-  bottom: 88rpx;
+  bottom: 91rpx;
+  height: 100rpx;
   left: 0;
   right: 0;
   display: flex;

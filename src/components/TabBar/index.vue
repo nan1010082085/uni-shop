@@ -46,4 +46,8 @@ onLoad(() => {
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.tabbar-wrap {
+  height: 88rpx;
+}
+</style>

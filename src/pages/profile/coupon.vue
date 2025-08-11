@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="优惠券" />
-  <view class="coupon-container">
+  <view class="coupon-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 标签页 -->
     <view class="tabs-container">
       <view class="tab-item" :class="{ active: activeTab === 'unused' }" @click="switchTab('unused')">
@@ -90,6 +90,7 @@
 import NavBar from '@/components/NavBar/index.vue'
 import { ref, reactive, computed, onMounted } from 'vue'
 import couponJsonData from '@/static/data/coupon.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 优惠券接口
@@ -118,6 +119,8 @@ interface CouponData {
   used: Coupon[]
   expired: Coupon[]
 }
+
+const pageTop = useSysTopBottom()
 
 /**
  * 当前激活的标签
@@ -300,7 +303,7 @@ onMounted(() => {
   flex-direction: column;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

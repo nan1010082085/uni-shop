@@ -1,6 +1,6 @@
 <template>
-  <view class="setting-container">
-    <NavBar title="设置" />
+  <NavBar title="设置" />
+  <view class="setting-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <view class="setting-wrap">
       <!-- 隐私设置 -->
       <view class="privacy-section">
@@ -106,8 +106,9 @@
 </template>
 <script setup lang="ts">
 import NavBar from '@/components/NavBar/index.vue'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 import { reactive } from 'vue'
-
+const pageTop = useSysTopBottom()
 // 隐私设置
 const privacySettings = reactive({
   allowStrangerView: true,
@@ -176,11 +177,10 @@ const handleLogout = () => {
 
 <style lang="scss" scoped>
 .setting-container {
-  min-height: 100vh;
   background-color: #f5f5f5;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

@@ -78,6 +78,7 @@ const handleHome = () => {
   justify-self: center;
   padding: 5rpx 10rpx;
   border-radius: 44rpx;
+  height: var(--status-bar-height);
   border: 1rpx solid $u-border-color;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <nav-bar title="我的收藏" />
-  <view class="collect-container">
+  <view class="collect-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <!-- 头部统计 -->
     <view class="header-stats">
       <text class="stats-text">共收藏 {{ collectList.length }} 件商品</text>
@@ -49,6 +49,7 @@ import { ref, onMounted } from 'vue'
 import NavBar from '@/components/NavBar/index.vue'
 import type { Product } from '@/types/data'
 import collectData from '@/static/data/collect.json'
+import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 /**
  * 收藏商品接口，继承基础商品信息并添加收藏相关字段
@@ -58,6 +59,8 @@ interface CollectProduct extends Product {
   sales: number
   stock: number
 }
+
+const pageTop = useSysTopBottom()
 
 /**
  * 收藏商品列表
@@ -179,7 +182,7 @@ onMounted(() => {
   background-color: #f5f5f5;
   padding-top: 88rpx;
   // #ifdef MP-WEIXIN
-  padding-top: 177rpx;
+  padding-top: 110rpx;
   // #endif
 }
 

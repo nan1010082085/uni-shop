@@ -12,6 +12,7 @@ node_modules
 .DS_Store
 dist
 *.local
+AndroidPackWork
 
 # Editor directories and files
 .idea
