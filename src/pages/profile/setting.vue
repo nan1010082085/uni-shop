@@ -2,6 +2,18 @@
   <NavBar title="设置" />
   <view class="setting-container" :style="{ paddingTop: pageTop.top + 'px' }">
     <view class="setting-wrap">
+      <!-- 认证 -->
+      <view class="other-section">
+        <view class="section-title">认证</view>
+        <view class="setting-item">
+          <view class="setting-info">
+            <text class="setting-label">认证信息</text>
+            <text class="setting-desc">查看和管理您的认证信息</text>
+          </view>
+          <u-icon name="arrow-right" size="24" @click="handleIdentityClick"></u-icon>
+        </view>
+      </view>
+
       <!-- 隐私设置 -->
       <view class="privacy-section">
         <view class="section-title">隐私设置</view>
@@ -107,8 +119,11 @@
 <script setup lang="ts">
 import NavBar from '@/components/NavBar/index.vue'
 import useSysTopBottom from '@/hooks/useSysTopBottom'
+import { useRoute, useRouter } from '@/router'
 import { reactive } from 'vue'
 const pageTop = useSysTopBottom()
+const router = useRouter()
+const route = useRoute()
 // 隐私设置
 const privacySettings = reactive({
   allowStrangerView: true,
@@ -121,6 +136,16 @@ const notificationSettings = reactive({
   orderStatus: true,
   promotion: false,
 })
+
+const handleIdentityClick = () => {
+  router.push({
+    path: '/pages/profile/identity',
+    query: {
+      redirect: route.path,
+      id: route.query.id,
+    },
+  })
+}
 
 // 清除缓存
 const clearCache = () => {

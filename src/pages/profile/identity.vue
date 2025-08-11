@@ -497,7 +497,6 @@ onMounted(() => {
 
 .status-section {
   padding: 40rpx;
-  margin-bottom: 20rpx;
 }
 
 .status-card {
@@ -659,8 +658,10 @@ onMounted(() => {
 
 .notice-item {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 24rpx;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8rpx;
+  height: 60rpx;
 }
 
 .notice-item:last-child {

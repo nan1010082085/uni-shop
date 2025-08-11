@@ -11,7 +11,7 @@
               <text class="user-phone">{{ item.phone }}</text>
             </view>
             <view class="default-badge" v-if="item.isDefault">
-              <text class="badge-text">默认</text>
+              <u-text type="primary" class="badge-text" text="默认"></u-text>
             </view>
           </view>
 
@@ -423,9 +423,7 @@ onMounted(() => {
 }
 
 .default-badge {
-  background-color: #ff6b6b;
   padding: 4rpx 16rpx;
-  border-radius: 20rpx;
 }
 
 .badge-text {

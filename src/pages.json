@@ -64,6 +64,13 @@
     },
     // 个人中心 profile
     {
+      "path": "pages/profile/identity",
+      "style": {
+        "navigationBarTitleText": "认证",
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/profile/edit",
       "style": {
         "navigationBarTitleText": "编辑资料",
