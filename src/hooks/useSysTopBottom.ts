@@ -15,7 +15,6 @@ const useSysTopBottom = (props: { top: number; bottom: number } = { top: 44, bot
   onReady(async () => {
     reset()
     let systemInfo = await uni.getSystemInfo()
-    console.log('systemInfo', systemInfo)
     if (systemInfo) {
       let top = systemInfo.statusBarHeight || 0
       let bottom = systemInfo?.safeAreaInsets?.bottom || 0

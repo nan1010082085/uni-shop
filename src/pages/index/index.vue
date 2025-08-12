@@ -84,7 +84,7 @@ import RecommendList from '@/components/RecommendList/index.vue'
 import SearchBar from '@/components/SearchBar/index.vue'
 import { ref, onMounted } from 'vue'
 import homeData from '@/static/data/home.json'
-import { useRouter } from '@/router'
+import { useRoute, useRouter } from '@/router'
 import useSysTopBottom from '@/hooks/useSysTopBottom'
 
 // 定义商品接口
@@ -106,6 +106,7 @@ interface Category {
 }
 
 const router = useRouter()
+const route = useRoute()
 const viewTopBottom = useSysTopBottom()
 
 // 从JSON文件加载数据
@@ -170,7 +171,10 @@ const handleProductClick = (product: Product) => {
   console.log('点击商品:', product)
   router.push({
     path: '/pages/commodity_details/index',
-    query: { id: product.id },
+    query: { 
+      redirect: route.path,
+      id: product.id
+     },
   })
 }
 

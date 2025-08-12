@@ -91,7 +91,7 @@
         <text class="title-text">猜你喜欢</text>
       </view>
       <view v-if="recommendProducts.length > 0" class="recommend-section">
-        <RecommendList :products="recommendProducts" />
+        <RecommendList :products="recommendProducts" @click="handleProductClick" />
       </view>
     </view>
 
@@ -136,6 +136,8 @@ import { uToast } from '@/utils'
 import CartData from '@/static/data/cart.json'
 import { onReady } from '@dcloudio/uni-app'
 import useSysTopBottom from '@/hooks/useSysTopBottom'
+import type { Product } from '@/types/data'
+import { useRoute, useRouter } from '@/router'
 
 /**
  * 购物车商品接口
@@ -174,6 +176,8 @@ interface CartData {
   recommendProducts: RecommendProduct[]
 }
 
+const router = useRouter()
+const route = useRoute()
 const viewTopBottom = useSysTopBottom()
 
 // 响应式数据
@@ -380,6 +384,17 @@ const handleCheckout = (): void => {
     //   url: '/pages/checkout/index'
     // })
   }
+}
+
+const handleProductClick = (product: Product) => {
+  console.log('点击商品:', product)
+  router.push({
+    path: '/pages/commodity_details/index',
+    query: { 
+      redirect: route.path,
+      id: product.id
+     },
+  })
 }
 
 /**

@@ -85,7 +85,10 @@
           <image v-for="(img, index) in review.images" :key="index" :src="img" class="review-image" />
         </view>
       </view>
-      <view class="view-all-reviews">查看全部评价 ></view>
+      <view class="view-all-reviews">
+        <text style="margin-right: 10rpx;">查看全部评价</text>
+        <u-icon name="arrow-right" size="16" color="#666"></u-icon>
+      </view>
     </view>
   </view>
 
@@ -501,6 +504,9 @@ onMounted(() => {
   }
 
   .view-all-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: $shop-text-color;
     font-size: 28rpx;

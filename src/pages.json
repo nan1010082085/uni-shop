@@ -1,169 +1,167 @@
 {
-  "easycom": {
-    "autoscan": true,
-    "custom": {
-      "^u-(.*)": "@/uni_modules/uview-next/components/u-$1/u-$1.vue"
-    }
-  },
-  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-      "path": "pages/index/index",
-      "style": {
-        "navigationBarTitleText": "由物商城",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/classify/index",
-      "style": {
-        "navigationBarTitleText": "分类",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/order/index",
-      "style": {
-        "navigationBarTitleText": "订单",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/cart/index",
-      "style": {
-        "navigationBarTitleText": "购物车",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/my/index",
-      "style": {
-        "navigationBarTitleText": "我的",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/login/index",
-      "style": {
-        "navigationBarTitleText": "登陆",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/search/index",
-      "style": {
-        "navigationBarTitleText": "搜索",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/commodity_details/index",
-      "style": {
-        "navigationBarTitleText": "商品详情",
-        "navigationStyle": "custom"
-      }
-    },
-    // 个人中心 profile
-    {
-      "path": "pages/profile/identity",
-      "style": {
-        "navigationBarTitleText": "认证",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/edit",
-      "style": {
-        "navigationBarTitleText": "编辑资料",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/coupon",
-      "style": {
-        "navigationBarTitleText": "优惠券",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/points",
-      "style": {
-        "navigationBarTitleText": "我的积分",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/collect",
-      "style": {
-        "navigationBarTitleText": "我的收藏",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/news",
-      "style": {
-        "navigationBarTitleText": "我的消息",
-        "navigationStyle": "custom"
-      }
-    },
-    // 个人中心-服务
-    {
-      "path": "pages/profile/address",
-      "style": {
-        "navigationBarTitleText": "地址管理",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/setting",
-      "style": {
-        "navigationBarTitleText": "设置",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/footprint",
-      "style": {
-        "navigationBarTitleText": "我的足迹",
-        "navigationStyle": "custom"
-      }
-    },
-    {
-      "path": "pages/profile/wallet",
-      "style": {
-        "navigationBarTitleText": "我的钱包",
-        "navigationStyle": "custom"
-      }
-    }
-    // ----
-  ],
-  "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "custom": true,
-    "color": "#333333",
-    "selectedColor": "#2979ff",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/classify/index",
-        "text": "分类"
-      },
-      {
-        "pagePath": "pages/cart/index",
-        "text": "购物车"
-      },
-      {
-        "pagePath": "pages/my/index",
-        "text": "我的"
-      }
-    ]
-  }
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)": "@/uni_modules/uview-next/components/u-$1/u-$1.vue"
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "由物商城",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/classify/index",
+			"style": {
+				"navigationBarTitleText": "分类",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "订单",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/cart/index",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登陆",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/commodity_details/index",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"navigationStyle": "custom"
+			}
+		},
+		// 个人中心 profile
+		{
+			"path": "pages/profile/identity",
+			"style": {
+				"navigationBarTitleText": "认证",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/edit",
+			"style": {
+				"navigationBarTitleText": "编辑资料",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/coupon",
+			"style": {
+				"navigationBarTitleText": "优惠券",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/points",
+			"style": {
+				"navigationBarTitleText": "我的积分",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/collect",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/news",
+			"style": {
+				"navigationBarTitleText": "我的消息",
+				"navigationStyle": "custom"
+			}
+		},
+		// 个人中心-服务
+		{
+			"path": "pages/profile/address",
+			"style": {
+				"navigationBarTitleText": "地址管理",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/setting",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/footprint",
+			"style": {
+				"navigationBarTitleText": "我的足迹",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/wallet",
+			"style": {
+				"navigationBarTitleText": "我的钱包",
+				"navigationStyle": "custom"
+			}
+		}
+		// ----
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#2979ff",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/classify/index",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/cart/index",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/my/index",
+				"text": "我的"
+			}
+		]
+	}
 }

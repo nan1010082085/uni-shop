@@ -213,7 +213,10 @@ const handleProductClick = (product: Product) => {
   console.log('点击商品:', product)
   router.push({
     path: '/pages/commodity_details/index',
-    query: { id: product.id },
+    query: { 
+      redirect: route.path,
+      id: product.id
+     },
   })
 }
 </script>
