@@ -2,7 +2,7 @@
   <view class="classify-wrap" :style="{ paddingTop: viewTopBottom.top + 'px' }">
     <!-- 搜索栏 -->
     <view class="classify-search" :style="{ paddingTop: viewTopBottom.top + 'px' }">
-      <search-bar class="search-bar" disabled @click="handleSearchClick" @search="handleSearch" @scan="handleScan" />
+      <search-bar disabled @click="handleSearchClick" @search="handleSearch" @scan="handleScan" />
     </view>
 
     <!-- 分类内容 -->
@@ -254,7 +254,8 @@ onMounted(() => {
   padding-top: 110rpx;
   // #endif
   // #ifdef APP-PLUS
-  margin-top: 110rpx;
+  margin-top: -40px;
+  padding-bottom: 20rpx;
   // #endif
 }
 
@@ -264,7 +265,7 @@ onMounted(() => {
   overflow: hidden;
   padding-top: 44px;
   // #ifdef APP-PLUS
-  padding-top: 44px;
+  padding-top: 22rpx;
   // #endif
 }
 

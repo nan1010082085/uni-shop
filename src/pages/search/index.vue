@@ -360,7 +360,7 @@ onMounted(() => {
   padding-top: 110rpx;
   // #endif
   // #ifdef APP-PLUS
-  padding-top: 40rpx;
+  margin-top: -40px;
   // #endif
 
   .search-bar {

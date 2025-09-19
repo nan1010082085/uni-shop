@@ -337,6 +337,7 @@ onMounted(() => {
   padding: 8rpx 24rpx;
   background-color: #ff6b6b;
   border-radius: 24rpx;
+  display: flex;
 }
 
 .mark-text {
